@@ -16,7 +16,7 @@ type TCardProps = {
 const Card = ({ content, pattern = 'icon-text'}: TCardProps ) => {
     return (
         <div className="
-            bg-surface-accent rounded-lg overflow-hidden
+            bg-surface-accent rounded-2xl overflow-hidden
             inline-flex flex-col md:flex-row items-center md:justify-between
             gap-6 md:gap-4 py-8 md:py-4 px-2 md:px-6
         ">

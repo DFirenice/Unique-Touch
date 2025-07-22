@@ -33,11 +33,11 @@ const NavHeader = () => {
             "fixed inset-x-0 py-2 px-6 transition-all",
             "flex flex-row items-center justify-between z-10",
             { "min-h-24": !isMinimized },
-            { "min-h-16 backdrop-blur-lg": isMinimized }
+            { "min-h-16 backdrop-blur-lg lg:bg-gradient-to-b from-surface-dark/60 to-surface-dark/60": isMinimized }
         ) }>
             <div className="flex flex-row items-center gap-4">
                 <div className="relative max-w-12 max-h-12 w-12 h-12 aspect-square">
-                    <Image className="drop-shadow-sm drop-shadow-black object-cover" src="logo.svg" fill alt="Unique Touch 4 Wellness logo" />
+                    <Image className="drop-shadow-sm drop-shadow-black/50 object-cover" src="logo.svg" fill alt="Unique Touch 4 Wellness logo" />
                 </div>
                 <Heading size="2xl" className="font-mono max-md:hidden">Unique Touch</Heading>
             </div>
@@ -51,7 +51,7 @@ const NavHeader = () => {
                 ) }
             </div>
             <div>
-                <Icon icon="AlignJustify" size={28} className="lg:hidden drop-shadow-xs drop-shadow-black" />
+                <Icon icon="AlignJustify" size={28} className="lg:hidden drop-shadow-xs drop-shadow-black/50" />
                 <Button className="max-lg:hidden" size="lg">Sign Up</Button>
             </div>
         </header>

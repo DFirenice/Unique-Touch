@@ -67,7 +67,7 @@ const Home = () => {
           <p>Everything we do is rooted in purpose to nurture, uplift, and deliver beauty beyond the surface.</p>
         </div>
         <div className="text-layer-light grid services-small-screen md:grid-cols-3 gap-x-4 gap-y-2 mt-12 mx-4">
-          <div className="flex flex-col md:*:flex-1 gap-6 sss-leftSide pt-16">
+          <div className="flex flex-col md:*:flex-1 gap-6 sss-leftSide max-md:pt-16">
             { ExperienceDataP1.map(card => (
               <Card
                 content={card}
