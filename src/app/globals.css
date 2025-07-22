@@ -11,6 +11,7 @@
   --color-light: #FFFCFB;
   --color-primary: #9BAF9E;
   --color-surface-light: #F5F2ED;
+  --color-surface-accent: #F4F0E7;
   --color-surface-dark: #725B4B;
   --color-text-accent: #EEDBCD;
   --color-brown-dp-0: #413831;
@@ -90,6 +91,7 @@
   --color-light: #FFFCFB;
   --color-primary: #9BAF9E;
   --color-surface-light: #F5F2ED;
+  --color-surface-accent: #F4F0E7;
   --color-surface-dark: #725B4B;
   --color-text-accent: #EEDBCD;
   --color-brown-dp-0: #413831; /* darker */
@@ -131,14 +133,14 @@
 /* Contextual layers — dark/light container scopes */
 @layer utilities {
   .text-layer-dark {
-    --text-base: white;
-    --text-accent: #ffd699; /* light gold accent on dark bg */
+    --text-base: var(--color-light);
+    --text-accent: var(--color-text-accent);
     color: var(--text-base);
   }
 
   .text-layer-light {
-    --text-base: var(--color-text);
-    --text-accent: var(--color-accent); /* soft brown accent on light bg */
+    --text-base: var(--color-brown-dp-1);
+    --text-accent: var(--color-brown-dp-1); /* soft brown accent on light bg */
     color: var(--text-base);
   }
 
@@ -159,6 +161,54 @@
   .text-inherit {
     color: inherit;
   }
+}
+
+.section-container {
+  @apply mx-4;
+  @media only screen and (max-width: 375px) {
+    & { @apply mx-0; }
+  }
+  @media screen and (width > 768px) {
+    & { @apply px-4; }
+  }
+}
+
+.services-small-screen {
+  @media screen and (max-width: 768px) {
+    & {
+      @apply gap-y-6;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "leftSide image"
+        "leftSide rightSide"
+        "leftSide rightSide"
+        "leftSide rightSide"
+        "leftSide rightSide";
+    }
+  }
+}
+
+.sss-leftSide {
+  @media screen and (max-width: 768px) {
+    & { grid-area: leftSide; }
+  }
+}
+.sss-image {
+  @media screen and (max-width: 768px) {
+    & { grid-area: image; }
+  }
+}
+.sss-rightSide {
+  @media screen and (max-width: 768px) {
+    & { grid-area: rightSide; }
+  }
+}
+
+p, span,
+h1, h2, h3, h4, h5, h6 {
+  @apply text-pretty max-md:max-w-sm md:max-w-prose;
 }
 
 .dark {

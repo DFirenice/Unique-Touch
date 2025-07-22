@@ -2,6 +2,8 @@ import * as LucideIcons from 'lucide-react'
 import type { LucideProps } from 'lucide-react'
 import { clsx } from 'clsx'
 
+export type Ticons = keyof typeof LucideIcons
+
 const DEFAULT_ICON_PROPS: Partial<LucideProps> = {
     color: 'currentColor',
     size: 20,
@@ -12,7 +14,7 @@ export const Icon = ({
     className,
     color,
     ...props
-}: { icon: keyof typeof LucideIcons } & LucideProps) => {
+}: { icon: Ticons } & LucideProps) => {
     const IconComponent = LucideIcons[icon]
     return (
         <IconComponent
