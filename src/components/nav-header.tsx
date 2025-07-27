@@ -3,7 +3,7 @@
 import { Heading } from "@chakra-ui/react"
 import { Button } from "@app-ui/button"
 import { Icon } from "@app-ui/Icon"
-import Image from "next/image"
+import Logo from "@app-comps/logo"
 import Link from "next/link"
 
 import { useEffect, useState } from "react"
@@ -37,7 +37,7 @@ const NavHeader = () => {
         ) }>
             <div className="flex flex-row items-center gap-4">
                 <div className="relative max-w-12 max-h-12 w-12 h-12 aspect-square">
-                    <Image className="drop-shadow-sm drop-shadow-black/50 object-cover" src="logo.svg" fill alt="Unique Touch 4 Wellness logo" />
+                    <Logo />
                 </div>
                 <Heading size="2xl" className="font-mono max-md:hidden">Unique Touch</Heading>
             </div>
