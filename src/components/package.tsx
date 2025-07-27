@@ -34,6 +34,7 @@ const Package = ({ data, dark = false }: { data: TPackage, dark: boolean }) => {
                     { data.points.map(text => (
                         <div className="flex items-center gap-4">
                             <Icon
+                                key={`${text}_package_point`}
                                 color={cn({
                                     "text-brown-dp-0": dark === false,
                                     "text-text-accent": dark

@@ -1,23 +1,25 @@
 import { Heading, Input } from "@chakra-ui/react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@app-comps/ui/button"
 import Image from "next/image"
-import { Icon } from "@/components/ui/Icon"
+import { Icon } from "@app-comps/ui/Icon"
 import Logo from "@app-comps/logo"
 import Tag from "@app-ui/tag"
 import { Button as ChackraButton, Group, Input as ChackraInput } from "@chakra-ui/react"
 
-import Hero from "@/components/sections/Hero"
-import ServiceCards from "@/components/ui/service-cards"
-import Card from "@/components/card"
-import Package from "@/components/package"
+import Hero from "@app-comps/sections/Hero"
+import ServiceCards from "@app-comps/ui/service-cards"
+import Card from "@app-comps/card"
+import Package from "@app-comps/package"
+import Footer from "@app-comps/sections/footer"
 
 import { ExperienceDataP1, ExperienceDataP2 } from "@/data/services.data"
 import { bookingStepsData, packagesData, TPackage } from "@/data/arrangments.data"
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@app-comps/ui/separator"
 
 const Home = () => {
   return (
     <>
+      {/* Hero */}
       <Hero />
 
       {/* Get to know more */}
@@ -76,8 +78,8 @@ const Home = () => {
           <div className="flex flex-col md:*:flex-1 gap-6 sss-leftSide max-md:pt-16">
             { ExperienceDataP1.map(card => (
               <Card
-                content={card}
                 key={[card.heading, card.icon].toString()}
+                content={card}
               />
             )) }
           </div>
@@ -91,8 +93,8 @@ const Home = () => {
           <div className="flex flex-col md:*:flex-1 gap-6 sss-rightSide">
             { ExperienceDataP2.map(card => (
               <Card 
-                content={card}
                 key={[card.heading, card.icon].toString()}
+                content={card}
                 pattern="text-icon"
               />
             )) }
@@ -146,7 +148,7 @@ const Home = () => {
           <Heading size="3xl">Voices of <span className="text-text-accent">Wellness</span></Heading>
         </div>
         <div className="space-y-4">
-          <p className="text-xl">"Beauva is my personal escape. Every visit leaves me refreshed, glowing, and completely relaxed. The team is amazing! I've been a loyal client for over two years and it just keeps getting better."</p>
+          <p className="text-xl">"Unique Touch is my personal escape. Every visit leaves me refreshed, glowing, and completely relaxed. The team is amazing! I've been a loyal client for over two years and it just keeps getting better."</p>
           <span className="text-text-accent">Lana Moris, Long-time client</span>
         </div>
       </section>
@@ -164,8 +166,8 @@ const Home = () => {
         </div>
         <div className="text-pretty flex flex-col lg:flex-row gap-4 text-left lg:container mx-auto w-full mt-12">
           { bookingStepsData.map((step, i) => (
-            <div className="flex flex-row max-lg:flex-col min-sm:max-lg:mx-auto max-lg:min-w-4/5">
-              <div className="max-h-min gap-6 flex max-lg:flex-row lg:flex-col align-start" key={`${step.title}_main`}>
+            <div className="flex flex-row max-lg:flex-col min-sm:max-lg:mx-auto max-lg:min-w-4/5" key={`${step.title}_main`}>
+              <div className="max-h-min gap-6 flex max-lg:flex-row lg:flex-col align-start">
                 <Heading size="6xl" className="max-lg:mx-8 max-sm:mx-4 max-lg:max-w-[2rem] w-full">{i + 1}</Heading>
                 <div className="w-full">
                   <Heading size="2xl" className="text-brown-dp-0 font-normal">{ step.title }</Heading>
@@ -218,7 +220,7 @@ const Home = () => {
           </div>
           <div>
             <p className="mb-6 text-text-accent max-md:max-w-sm max-w-md">Sign up to receive exclusive offers, beauty tips, and wellness inspiration.</p>
-            <div className="max-w-[90%] mx-auto">
+            <div>
               <Group attached w="full" maxW="sm" className="*:border-none">
                 <ChackraInput flex="1" placeholder="Enter your email" className="bg-light/38 text-brown-dp-0 rounded-l-full pl-6 placeholder-brown-dp-1" />
                 <ChackraButton className="bg-brown-dp-0 text-text-accent rounded-full" variant="outline">
@@ -229,6 +231,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </>
   )
 }
