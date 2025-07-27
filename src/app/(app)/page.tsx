@@ -138,8 +138,8 @@ const Home = () => {
 
       {/* Customers' feedback */}
       <section className="
-        m-section px-4 py-12 min-h-[75dvh] flex flex-col items-center justify-center gap-16 text-center
-        bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75dvh] bg-center bg-brown-dp-1
+        m-section px-4 py-12 min-h-[75vh] flex flex-col items-center justify-center gap-16 text-center
+        bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75vh] bg-center bg-brown-dp-1
       ">
         <div className="flex flex-col justify-center gap-4">
           <div className="relative w-12 h-12 mx-auto"><Logo /></div>
@@ -205,8 +205,8 @@ const Home = () => {
       
       {/* Subcsribe */}
       <section className="
-        m-section px-4 py-12 min-h-[40dvh] flex flex-row items-center justify-between gap-16
-        bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75dvh] bg-center bg-brown-dp-1
+        m-section px-4 py-12 min-h-[40vh] flex flex-row items-center justify-between gap-16
+        bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75vh] bg-center bg-brown-dp-1
         text-layer-dark text-pretty max-md:text-center
       ">
         <div className="mx-auto container flex flex-col md:flex-row justify-around items-center gap-4">
