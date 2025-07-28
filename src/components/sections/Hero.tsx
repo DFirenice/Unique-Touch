@@ -7,7 +7,7 @@ const Hero = () => {
             text-layer-dark
             min-h-screen h-screen w-screen
             bg-[linear-gradient(to_top,rgba(0,0,0,0.38),rgba(0,0,0,0.38)),url('/images/hero-bg.jpeg')] bg-center bg-cover bg-no-repeat
-        ">
+        " id="hero">
             <div className="px-2 text-center flex items-center flex-col justify-center gap-6 h-full">
                 <Heading className="*:capitalize max-w-full tracking-wide" size="5xl">
                     <span className="text-text-accent block w-full sm:inline-flex sm:w-auto">Your Escape</span>

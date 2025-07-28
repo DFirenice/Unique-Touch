@@ -6,11 +6,10 @@ import Logo from "@app-comps/logo"
 import Tag from "@app-ui/tag"
 import { Button as ChackraButton, Group, Input as ChackraInput } from "@chakra-ui/react"
 
-import Hero from "@app-comps/sections/Hero"
+import Hero from "@/components/sections/hero"
 import ServiceCards from "@app-comps/ui/service-cards"
 import Card from "@app-comps/card"
 import Package from "@app-comps/package"
-import Footer from "@app-comps/sections/footer"
 
 import { ExperienceDataP1, ExperienceDataP2 } from "@/data/services.data"
 import { bookingStepsData, packagesData, TPackage } from "@/data/arrangments.data"
@@ -48,7 +47,7 @@ const Home = () => {
       </section>
       
       {/* Services */}
-      <section className="md:px-4 container w-full justify-self-center min-h-[85dvh] max-md:min-h-screen flex items-center justify-center text-center">
+      <section id="services" className="md:px-4 container w-full justify-self-center min-h-[85dvh] max-md:min-h-screen flex items-center justify-center text-center">
         <div className="w-full max-md:my-12 min-lg:my-12">
           <Tag content="Services" />
           <div className="mb-12 *:my-4 *:mx-auto">
@@ -231,9 +230,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </>
   )
 }

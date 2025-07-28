@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+    .AboutPics1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .AboutPics2 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .AboutPics3 {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+}

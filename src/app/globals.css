@@ -6,6 +6,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 5dvh;
+}
+
 :root {
 
   --color-light: #FFFCFB;

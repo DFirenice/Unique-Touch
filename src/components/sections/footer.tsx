@@ -9,7 +9,7 @@ import { LuFacebook, LuInstagram } from "react-icons/lu"
 const Footer = () => {
     return (
         <section className="text-layer-light px-4">
-            <div className="container flex flex-col md:flex-row gap-12 max-md:justify-between justify-around mx-auto py-12 lg:px-12">
+            <div className="container flex flex-col md:flex-row gap-12 justify-between mx-auto py-12 lg:px-12">
                 {/* Logo */}
                 <div className="flex flex-col md:gap-6 min-w-max">
                     <div className="flex flex-row gap-4 items-center max-md:hidden">
@@ -31,7 +31,7 @@ const Footer = () => {
                     </div>
                 </div>
                 {/* Links */}
-                <div className="flex flex-row justify-center *:flex *:flex-col gap-4 sm:gap-10 lg:ml-auto">
+                <div className="flex flex-row justify-center *:flex *:flex-col gap-4 sm:gap-10">
                     {/* Menu */}
                     <div className="md:justify-self-center flex flex-col gap-4 h-full min-w-1/2">
                         <Heading size="2xl">Menu</Heading>
