@@ -1,6 +1,7 @@
 import { Heading } from "@chakra-ui/react"
 import { Separator } from "@/components/ui/separator"
 import { Icon } from "@/components/ui/Icon"
+import Tag from "@app-ui/tag"
 import Image from "next/image"
 
 import './styles.css'
@@ -11,12 +12,20 @@ const AboutPage = () => {
         <>
             <section className="mt-32 max-md:min-h-[50vh] text-layer-light w-full">
                 <div className="container px-4 flex h-full flex-col justify-center mx-auto">
-                    <div className="w-full flex max-md:text-center items-center md:items-end flex-col md:flex-row gap-4">
+                    <div className="w-full flex max-md:text-center md:justify-between items-center md:items-end flex-col md:flex-row gap-4">
+                        <div className="max-md:mx-auto inline-flex my-2 md:hidden">
+                            <Tag content="About" />
+                        </div>
                         <Heading size="4xl" className="flex flex-col">
                             <span>Rooted in Wellness,</span>
                             <span className="text-brown-dp-0">Elevated by Beauty</span>
                         </Heading>
-                        <p className="max-w-sm">Discover the story, spirit, and soul behind every serene moment at Unique Touch.</p>
+                        <p className="max-w-sm flex flex-col">
+                            <div className="max-md:mx-auto inline-flex my-2 max-md:hidden">
+                                <Tag content="About" />
+                            </div>
+                            <span>Discover the story, spirit, and soul behind every serene moment at Unique Touch.</span>
+                        </p>
                     </div>
                     <div className="
                         mt-16 grid grid-cols-3 gap-4 *:w-full *:h-72 max-md:*:max-h-64

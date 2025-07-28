@@ -78,7 +78,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="w-full container mx-auto">
                 <Separator orientation="horizontal" />
-                <div className="flex flex-col max-md:text-center md:flex-row justify-between gap-2 md:gap-6 w-full py-6">
+                <div className="flex flex-col max-md:text-center md:flex-row justify-between gap-2 md:gap-6 w-full pt-6 pb-10">
                     <div className="max-md:*:font-medium">
                         <span className="mr-[1ch]">Copyright © { new Date().getFullYear() }</span>
                         <span>Unique Touch</span>
