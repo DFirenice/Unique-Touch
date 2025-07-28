@@ -1,10 +1,11 @@
-import { Heading, Input } from "@chakra-ui/react"
+import { Heading } from "@chakra-ui/react"
 import { Button } from "@app-comps/ui/button"
 import Image from "next/image"
 import { Icon } from "@app-comps/ui/Icon"
 import Logo from "@app-comps/logo"
 import Tag from "@app-ui/tag"
 import { Button as ChackraButton, Group, Input as ChackraInput } from "@chakra-ui/react"
+import Link from "next/link"
 
 import Hero from "@/components/sections/hero"
 import ServiceCards from "@app-comps/ui/service-cards"
@@ -41,7 +42,9 @@ const Home = () => {
               At Unique Touch, we believe true beauty blooms in balance. Our spa blends luxury and wellness, offering facials, massages, and more—each
               designed to renew your body, mind, and soul. Step into serenity, and let self-care become your lifestyle.
             </p>
-            <Button className="flex max-md:mx-auto mt-6 mb-12" size="lg" variant="secondary">Get to Know More</Button>
+            <Link href="/about">
+              <Button className="flex max-md:mx-auto mt-6 mb-12" size="lg" variant="secondary">Get to Know More</Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -181,7 +184,7 @@ const Home = () => {
       </section>
 
       {/* Packages */}
-      <section className="px-4 m-section text-layer-light text-center">
+      <section className="px-4 m-section text-layer-light text-center" id="packages">
         <div className="w-full mx-auto xl:container">
           <div className="*:my-4 w-full text-center flex items-center flex-col">
             <Heading size="4xl" className="flex flex-col text-brown-dp-0">

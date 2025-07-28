@@ -36,10 +36,10 @@ const Footer = () => {
                     <div className="md:justify-self-center flex flex-col gap-4 h-full min-w-1/2">
                         <Heading size="2xl">Menu</Heading>
                         <div className="flex flex-col gap-2">
-                            <Link href="">Home</Link>
-                            <Link href="">About</Link>
-                            <Link href="">Services</Link>
-                            <Link href="">Packages</Link>
+                            <Link href="/">Home</Link>
+                            <Link href="/about">About</Link>
+                            <Link href="/#services">Services</Link>
+                            <Link href="/#packages">Packages</Link>
                             <Link href="">Contact</Link>
                         </div>
                     </div>
@@ -63,12 +63,12 @@ const Footer = () => {
                         <div className="mt-6 flex flex-row gap-4">
                             <Link href="">
                                 <IconButton className="bg-text-accent" rounded="full">
-                                    <LuFacebook />
+                                    <LuFacebook strokeWidth="1" />
                                 </IconButton>
                             </Link>
                             <Link href="">
                                 <IconButton className="bg-text-accent" rounded="full">
-                                    <LuInstagram />
+                                    <LuInstagram strokeWidth="1" />
                                 </IconButton>
                             </Link>
                         </div>

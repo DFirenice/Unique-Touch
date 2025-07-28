@@ -73,7 +73,7 @@ const NavHeader = () => {
                 { "min-h-24": !isMinimized },
                 { "min-h-16 backdrop-blur-lg bg-gradient-to-b lg:from-surface-dark/60 lg:to-surface-dark/60": fullCondition },
                 { "bg-gradient-to-b from-surface-dark/38 to-surface-dark/38": fullCondition },
-                { "border-b-brown-dp-1/38": dropdownOpen }
+                { "border-b-brown-dp-1/24": dropdownOpen }
             ) }>
                 <div className="flex flex-row items-center gap-4">
                     <div className="relative max-w-12 max-h-12 w-12 h-12 aspect-square">

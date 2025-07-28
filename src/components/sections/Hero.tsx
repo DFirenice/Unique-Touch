@@ -1,5 +1,6 @@
 import { Heading } from "@chakra-ui/react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const Hero = () => {
     return (
@@ -16,7 +17,9 @@ const Hero = () => {
                 <p className="text-pretty max-w-xs">Step into a world of calm, comfort, and beauty — curated just for you.</p>
                 <div className="my-4 flex flex-wrap justify-center gap-4 max-md:flex-col">
                     <Button size="lg" className="capitalize">Book Your Experience</Button>
-                    <Button size="lg" variant="outline" className="capitalize">Explore Services</Button>
+                    <Link href="/#services">
+                        <Button size="lg" variant="outline" className="capitalize">Explore Services</Button>
+                    </Link>
                 </div>
             </div>
         </section>

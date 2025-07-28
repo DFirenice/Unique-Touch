@@ -10,7 +10,7 @@ import { ExperienceDataP1, ExperienceDataP2 } from "@/data/services.data"
 const AboutPage = () => {
     return (
         <>
-            <section className="mt-32 max-md:min-h-[50vh] text-layer-light w-full">
+            <section className="mt-28 max-md:min-h-[50vh] text-layer-light w-full">
                 <div className="container px-4 flex h-full flex-col justify-center mx-auto">
                     <div className="w-full flex max-md:text-center md:justify-between items-center md:items-end flex-col md:flex-row gap-4">
                         <div className="max-md:mx-auto inline-flex my-2 md:hidden">
