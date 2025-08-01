@@ -3,9 +3,10 @@ import { Separator } from "@/components/ui/separator"
 import { Icon } from "@/components/ui/Icon"
 import Tag from "@app-ui/tag"
 import Image from "next/image"
+import BookingSection from "@app-comps/sections/booking"
 
-import './styles.css'
 import { ExperienceDataP1, ExperienceDataP2 } from "@/data/services.data"
+import './styles.css'
 
 const AboutPage = () => {
     return (
@@ -48,8 +49,8 @@ const AboutPage = () => {
                 <div className="w-full">
                     <div className="*:max-w-4xl overflow-hidden">
                         <Heading size="4xl" className="mx-auto">
-                            <span className="text-brown-dp-0">Self-care is more than a luxury —</span>
-                            <span> it's a lifestyle. Nestled in a calm, elegant space, our spa is a sanctuary where beauty, wellness, and inner balance come together.</span>
+                            <span className="text-brown-dp-0">{`Self-care is more than a luxury —`}</span>
+                            <span>{` it's a lifestyle. Nestled in a calm, elegant space, our spa is a sanctuary where beauty, wellness, and inner balance come together.`}</span>
                         </Heading>
                     </div>
                     <div className="my-10 flex flex-row items-center justify-between">
@@ -59,7 +60,7 @@ const AboutPage = () => {
                         </div>
                         <Separator orientation="horizontal" className="max-w-2/5" />
                     </div>
-                    <p className="max-w-prose mx-auto">Whether you're here for a relaxing facial, a full-body retreat, or a moment of quiet, our treatments are designed to restore not only your skin, but also your spirit. Our expert therapists, calming rituals, and natural products ensure every visit feels like a gentle reset for your whole being.</p>
+                    <blockquote className="max-w-prose mx-auto">{`Whether you're here for a relaxing facial, a full-body retreat, or a moment of quiet, our treatments are designed to restore not only your skin, but also your spirit. Our expert therapists, calming rituals, and natural products ensure every visit feels like a gentle reset for your whole being.`}</blockquote>
                 </div>
             </section>
 
@@ -87,6 +88,8 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
+
+            <BookingSection />
         </>
     )
 }

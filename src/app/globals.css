@@ -224,7 +224,7 @@ img {
   }
 }
 
-p, span,
+p, span, blockquote,
 h1, h2, h3, h4, h5, h6 {
   @apply text-pretty max-md:max-w-sm md:max-w-prose;
 }
