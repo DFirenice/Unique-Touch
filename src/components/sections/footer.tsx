@@ -1,10 +1,9 @@
 import Logo from "@app-comps/logo"
-import { Heading, IconButton } from "@chakra-ui/react"
+import { Heading } from "@chakra-ui/react"
 import { Separator } from "@app-ui/separator"
 import Link from "next/link"
 import { Icon } from "@app-ui/Icon"
-
-import { LuFacebook, LuInstagram } from "react-icons/lu"
+import SocialMediaLinks from "@app-comps/socialMediaLinks"
 
 const Footer = () => {
     return (
@@ -60,18 +59,7 @@ const Footer = () => {
                                 <span className="max-w-36">{ "123 Serenity Lane, Los Angeles, CA" }</span>
                             </div>
                         </div>
-                        <div className="mt-6 flex flex-row gap-4">
-                            <Link href="">
-                                <IconButton className="bg-text-accent" rounded="full">
-                                    <LuFacebook strokeWidth="1" />
-                                </IconButton>
-                            </Link>
-                            <Link href="">
-                                <IconButton className="bg-text-accent" rounded="full">
-                                    <LuInstagram strokeWidth="1" />
-                                </IconButton>
-                            </Link>
-                        </div>
+                        <SocialMediaLinks />
                     </div>
                 </div>
             </div>

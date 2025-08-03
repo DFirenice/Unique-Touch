@@ -1,8 +1,8 @@
 'use client'
 
+import type { TSelectFormOptions } from '@/types/form.types'
 import { useField } from 'formik'
 import { useState } from 'react'
-import type { TSelectFormOptions } from '@/types/form.types'
 
 import {
     Select,

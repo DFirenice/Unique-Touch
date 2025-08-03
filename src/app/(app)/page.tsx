@@ -7,7 +7,7 @@ import Tag from "@app-ui/tag"
 import { Button as ChackraButton, Group, Input as ChackraInput } from "@chakra-ui/react"
 import Link from "next/link"
 
-import Hero from "@/components/sections/hero"
+import Hero from "@/components/sections/Hero"
 import ServiceCards from "@app-comps/ui/service-cards"
 import Card from "@app-comps/card"
 import Package from "@app-comps/package"
@@ -150,7 +150,7 @@ const Home = () => {
           <Heading size="3xl">Voices of <span className="text-text-accent">Wellness</span></Heading>
         </div>
         <div className="space-y-4">
-          <p className="text-xl">"Unique Touch is my personal escape. Every visit leaves me refreshed, glowing, and completely relaxed. The team is amazing! I've been a loyal client for over two years and it just keeps getting better."</p>
+          <p className="text-xl">{`"Unique Touch is my personal escape. Every visit leaves me refreshed, glowing, and completely relaxed. The team is amazing! I've been a loyal client for over two years and it just keeps getting better."`}</p>
           <span className="text-text-accent">Lana Moris, Long-time client</span>
         </div>
       </section>

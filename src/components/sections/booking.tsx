@@ -16,17 +16,17 @@ import { cn } from '@/lib/utils'
 const fieldClass = "text-sm placeholder-accent-foreground/50 border bg-background/50 shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50"
 
 const BookingForm = () => {
-    const [ date, setDate ] = useState<Date | undefined>(undefined)
+    const [date, setDate] = useState<Date | undefined>(undefined)
 
     const handleSubmit = async (values: TBookingParams, actions: FormikHelpers<TBookingParams>) => {
         await new Promise(resolve => { setTimeout(resolve, 1000) })
         console.log(values)
         actions.resetForm()
     }
-    
+
     return (
-        <section className="mt-24 text-layer-dark min-h-screen px-4">
-            <div className="container bg-brown-dp-1 flex items-center gap-4 flex-col md:flex-row w-full mx-auto rounded-xl overflow-hidden min-h-[50vh] h-full">
+        <section className="my-24 text-layer-dark px-4">
+            <div className="container bg-brown-dp-1 flex items-center gap-4 flex-col md:flex-row xl:max-w-[65%] w-full m-auto rounded-xl overflow-hidden min-h-[50vh] h-full">
                 <div className="relative w-full min-h-[30vh] md:w-2/5 md:h-full md:min-h-[75vh]">
                     <Image src="/images/about/towels_on_rack.jpg" alt="Book now" fill className="object-cover" />
                 </div>
@@ -48,11 +48,13 @@ const BookingForm = () => {
                                 </div>
                                 <div className="w-full *:w-full">
                                     <FormikSelection fieldName='service' options={serviceOptions} placeholder="Preferred Service" />
+                                    <ErrorMessage className="absolute capitalize text-text-accent text-xs" name="service" component="div" />
+
                                 </div>
                                 <div className="relative">
                                     <DateAndTime dateName="date" timeName="time" date={date} setDate={setDate} />
                                     <ErrorMessage className="absolute top-full capitalize text-text-accent text-xs" name="date" component="div" />
-                                    <ErrorMessage className="right-0 absolute top-full capitalize text-text-accent text-xs" name="time" component="div" />
+                                    <ErrorMessage className="left-[80%] absolute top-full capitalize text-text-accent text-xs" name="time" component="div" />
                                 </div>
                                 <div>
                                     <Field className={cn("px-3 py-2 rounded-lg", fieldClass)} name="note" type="text" placeholder="Your note (Optional)" />

@@ -31,11 +31,13 @@ const NavHeader = () => {
     }, [])
     
     // Trigger
-    const fullCondition = (isMinimized || dropdownOpen || path === '/about')
+    const fullCondition = (isMinimized || dropdownOpen || path === '/about' || path === '/contact')
     const minimizedCondition = (!isMinimized || dropdownOpen)
 
     // Modile: dropdown
     const handleDropdown = () => setDropdownOpen(state => !state)
+
+    const navLinks = [['Home', '/'], ['About', '/about'], ['Services', '/#services'], ['Contact', '/contact']]
 
     const renderDropdown = () => {
         return dropdownOpen ? (
@@ -45,7 +47,7 @@ const NavHeader = () => {
                 { "mt-24 bg-surface-dark/60": minimizedCondition },
                 { "mt-16 bg-surface-dark/38": fullCondition },
             )}>
-                { [['Home', '/'], ['About', '/about'], ['Services', '/#services'], ['Contact', '#contact']].map(
+                { navLinks.map(
                     ([text, link], i) => (
                         <Link
                             href={link}
@@ -82,7 +84,7 @@ const NavHeader = () => {
                     <Heading size="2xl" className="font-mono max-md:hidden drop-shadow-sm">Unique Touch</Heading>
                 </div>
                 <div className="font-medium absolute text-center inset-x-0 flex-1 mx-auto max-lg:hidden *:px-4">
-                    { [['Home', '/'], ['About', '/about'], ['Services', '/#services'], ['Contact', '#contact']].map(
+                    { navLinks.map(
                         ([text, link], i) => (
                             <Link href={link} className={cn(
                                 "underline-offset-8 hover:underline decoration-light",
