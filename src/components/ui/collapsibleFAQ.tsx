@@ -8,15 +8,16 @@ import {
     CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { Icon } from "@app-ui/Icon"
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 
 type TCollapsibleFaqProps = {
     trigger: string
     content: string
+    open?: boolean
 }
 
-const CollapsibleFAQ = ({ trigger, content }: TCollapsibleFaqProps) => {
-    const [ isOpen, setOpen ] = useState(false)
+const CollapsibleFAQ = ({ trigger, content, open = false }: TCollapsibleFaqProps) => {
+    const [ isOpen, setOpen ] = useState(open)
     return (
         <Collapsible
             open={isOpen}

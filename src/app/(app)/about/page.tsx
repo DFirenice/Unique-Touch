@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 import { Separator } from "@/components/ui/separator"
 import { Icon } from "@/components/ui/Icon"
 import Tag from "@app-ui/tag"
@@ -21,12 +21,12 @@ const AboutPage = () => {
                             <span>Rooted in Wellness,</span>
                             <span className="text-brown-dp-0">Elevated by Beauty</span>
                         </Heading>
-                        <p className="max-w-sm flex flex-col">
-                            <div className="max-md:mx-auto inline-flex my-2 max-md:hidden">
+                        <div className="max-w-sm flex flex-col">
+                            <span className="max-md:mx-auto inline-flex my-2 max-md:hidden">
                                 <Tag content="About" />
-                            </div>
+                            </span>
                             <span>Discover the story, spirit, and soul behind every serene moment at Unique Touch.</span>
-                        </p>
+                        </div>
                     </div>
                     <div className="
                         mt-16 grid grid-cols-3 gap-4 *:w-full *:h-72 max-md:*:max-h-64
@@ -64,6 +64,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
+            {/* Our values */}
             <section className="mt-24 bg-surface-dark text-layer-dark px-4">
                 <div className="py-24 mx-auto container w-full flex justify-around flex-col gap-y-14 gap-x-8 max-md:text-center max-md:*:mx-auto md:flex-row">
                     <div>
@@ -81,7 +82,7 @@ const AboutPage = () => {
                                 </div>
                                 <div>
                                     <Heading size="2xl" className="font-semibold text-text-accent">{ item.heading }</Heading>
-                                    <p className="text-muted-foreground">{ item.desc }</p>
+                                    <p className="text-light/60">{ item.desc }</p>
                                 </div>
                             </div>
                         )) }

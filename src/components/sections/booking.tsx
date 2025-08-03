@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import FormikSelection from '@app-ui/formikSelection'
 import { BookingSchema } from '@/schemas/validationSchemas'
 import { Button } from '@app-ui/button'
-import { Heading } from '@chakra-ui/react'
+import { Heading } from '@app-ui/heading'
 import Image from 'next/image'
 import DateAndTime from '@app-comps/DateAndTime'
 

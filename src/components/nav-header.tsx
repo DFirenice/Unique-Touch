@@ -1,6 +1,6 @@
 'use client'
 
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 import { Button } from "@app-ui/button"
 import { Icon } from "@app-ui/Icon"
 import Logo from "@app-comps/logo"

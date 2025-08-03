@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { IconButton } from "@chakra-ui/react"
-import { LuFacebook, LuInstagram } from "react-icons/lu"
 import { cn } from "@/lib/utils"
+import { Button } from "./ui/button"
+import { Icon } from "./ui/Icon"
 
 const SocialMediaLinks = ({ className }: { className?: string }) => {
     return (
@@ -10,14 +10,14 @@ const SocialMediaLinks = ({ className }: { className?: string }) => {
             className
         )}>
             <Link href="">
-                <IconButton className="bg-text-accent" rounded="full">
-                    <LuFacebook strokeWidth="1" />
-                </IconButton>
+                <Button className="bg-text-accent rounded-full hover:bg-text-accent/50 cursor-pointer"size="icon">
+                    <Icon icon="LucideFacebook" color="text-brown-dp-0" size={8} />
+                </Button>
             </Link>
             <Link href="">
-                <IconButton className="bg-text-accent" rounded="full">
-                    <LuInstagram strokeWidth="1" />
-                </IconButton>
+                <Button className="bg-text-accent rounded-full hover:bg-text-accent/50 cursor-pointer" size="icon">
+                    <Icon icon="LucideInstagram" color="text-brown-dp-0" size={8} />
+                </Button>
             </Link>
         </div>
     )

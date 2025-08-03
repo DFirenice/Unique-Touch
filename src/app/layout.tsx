@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Work_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-// Chakra UI
-import { Provider } from "@/components/ui/provider";
-
 // variable, subsets
 
 const workSans = Work_Sans({
@@ -33,9 +30,7 @@ export default function RootLayout({
       <body
         className={`${workSans.variable} ${robotoMono.variable} antialiased m-0 p-0`}
       >
-        <Provider>
-          {children}
-        </Provider>
+        {children}
       </body>
     </html>
   );

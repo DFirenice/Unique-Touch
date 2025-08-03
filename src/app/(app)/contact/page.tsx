@@ -3,7 +3,7 @@ import ContactForm from "@app-comps/sections/contact"
 import SocialMediaLinks from "@app-comps/socialMediaLinks"
 import CollapsibleFAQ from "@app-ui/collapsibleFAQ"
 import { Icon } from "@app-ui/Icon"
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 import { faqData } from "@/data/faqData"
 
 const Contact = () => {
@@ -62,25 +62,26 @@ const Contact = () => {
           <SocialMediaLinks className="justify-center" />
         </div>
       </section>
-      <section className="px-4">
-        <div className="text-layer-light w-full container mx-auto flex flex-col md:flex-row justify-around">
-          <div>
+      <section className="mx-4 mt-24">
+        <div className="px-4 text-layer-light w-full container mx-auto flex flex-col max-lg:gap-y-12 gap-8 lg:flex-row justify-center lg:justify-around">
+          <div className="max-lg:text-center px-4">
             <Heading size="4xl">
               <span>Wondering</span>
               <span className="text-brown-dp-0"> About Something?</span>
             </Heading>
-            <p className="max-w-sm">Everything we do is rooted in purpose - to nurture, uplift, and deliver beauty beyond the surface.</p>
+            <p className="max-w-sm mt-6 max-lg:mx-auto">Everything we do is rooted in purpose - to nurture, uplift, and deliver beauty beyond the surface.</p>
           </div>
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full px-4 not-first:mt-4">
             { faqData.map(({ trigger, content }, i) => (
               <div key={trigger + i}>
-                <CollapsibleFAQ trigger={trigger} content={content} />
-                <Separator />
+                <CollapsibleFAQ trigger={trigger} content={content} open={i < 2} />
+                { i + 1 !== faqData.length && <Separator /> }
               </div>
             )) }
           </div>
         </div>
       </section>
+      <section className="mt-16" />
     </>
   )
 }

@@ -1,10 +1,9 @@
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 import { Button } from "@app-comps/ui/button"
 import Image from "next/image"
 import { Icon } from "@app-comps/ui/Icon"
 import Logo from "@app-comps/logo"
 import Tag from "@app-ui/tag"
-import { Button as ChackraButton, Group, Input as ChackraInput } from "@chakra-ui/react"
 import Link from "next/link"
 
 import Hero from "@/components/sections/Hero"
@@ -15,6 +14,7 @@ import Package from "@app-comps/package"
 import { ExperienceDataP1, ExperienceDataP2 } from "@/data/services.data"
 import { bookingStepsData, packagesData, TPackage } from "@/data/arrangments.data"
 import { Separator } from "@app-comps/ui/separator"
+import { Input } from "@/components/ui/input"
 
 const Home = () => {
   return (
@@ -223,12 +223,15 @@ const Home = () => {
           <div>
             <p className="mb-6 text-text-accent max-md:max-w-sm max-w-md">Sign up to receive exclusive offers, beauty tips, and wellness inspiration.</p>
             <div>
-              <Group attached w="full" maxW="sm" className="*:border-none">
-                <ChackraInput flex="1" placeholder="Enter your email" className="bg-light/38 text-brown-dp-0 rounded-l-full pl-6 placeholder-brown-dp-1" />
-                <ChackraButton className="bg-brown-dp-0 text-text-accent rounded-full" variant="outline">
+              <div className="flex flex-row w-full max-w-sm *:border-none">
+                <Input placeholder="Enter your email" className="
+                  flex-1 rounded-l-full rounded-r-none
+                  text-light pl-6 placeholder-brown-dp-1
+                " autoComplete="off" />
+                <Button className="rounded-l-none rounded-r-full bg-brown-dp-0 text-text-accent" variant="outline">
                   Subscribe
-                </ChackraButton>
-              </Group>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

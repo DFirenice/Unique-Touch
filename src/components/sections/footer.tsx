@@ -1,5 +1,5 @@
 import Logo from "@app-comps/logo"
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 import { Separator } from "@app-ui/separator"
 import Link from "next/link"
 import { Icon } from "@app-ui/Icon"
@@ -7,8 +7,8 @@ import SocialMediaLinks from "@app-comps/socialMediaLinks"
 
 const Footer = () => {
     return (
-        <section className="text-layer-light px-4">
-            <div className="container flex flex-col md:flex-row gap-12 justify-between mx-auto py-12 lg:px-12">
+        <section className="text-layer-light mx-4">
+            <div className="px-4 flex flex-col md:flex-row gap-12 justify-between w-full py-12 lg:px-12">
                 {/* Logo */}
                 <div className="flex flex-col md:gap-6 min-w-max">
                     <div className="flex flex-row gap-4 items-center max-md:hidden">
@@ -32,7 +32,7 @@ const Footer = () => {
                 {/* Links */}
                 <div className="flex flex-row justify-center *:flex *:flex-col gap-4 sm:gap-10">
                     {/* Menu */}
-                    <div className="md:justify-self-center flex flex-col gap-4 h-full min-w-1/2">
+                    <div className="md:justify-self-center flex flex-col gap-4 h-full max-md:min-w-1/2">
                         <Heading size="2xl">Menu</Heading>
                         <div className="flex flex-col gap-2">
                             <Link href="/">Home</Link>
@@ -64,7 +64,7 @@ const Footer = () => {
                 </div>
             </div>
             {/* Copyright */}
-            <div className="w-full container mx-auto">
+            <div className="w-full mx-auto">
                 <Separator orientation="horizontal" />
                 <div className="flex flex-col max-md:text-center md:flex-row justify-between gap-2 md:gap-6 w-full pt-6 pb-10">
                     <div className="max-md:*:font-medium">

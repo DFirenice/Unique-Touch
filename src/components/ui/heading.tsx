@@ -1,32 +1,32 @@
-import { cn } from '@/lib/utils'
+import { JSX } from "react"
 
 type HeadingProps = {
-  as?: keyof JSX.IntrinsicElements // 'h1' | 'h2' | etc.
-  size?: '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
+  as?: keyof JSX.IntrinsicElements
+  size?: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
   className?: string
   children: React.ReactNode
 }
 
-const sizeMap: Record<NonNullable<HeadingProps['size']>, string> = {
-  '4xl': 'text-6xl font-bold',
-  '3xl': 'text-5xl font-bold',
-  '2xl': 'text-4xl font-bold',
-  'xl': 'text-3xl font-semibold',
-  'lg': 'text-2xl font-semibold',
-  'md': 'text-xl font-medium',
-  'sm': 'text-lg font-medium',
-  'xs': 'text-base font-medium',
+const sizes = {
+  '6xl': 'text-6xl',
+  '5xl': 'text-5xl',
+  '4xl': 'text-4xl',
+  '3xl': 'text-3xl',
+  '2xl': 'text-2xl',
+  xl: 'text-xl',
+  lg: 'text-lg',
+  md: 'text-md',
+  sm: 'text-base',
+  xs: 'text-sm',
 }
 
 export const Heading = ({
   as: Tag = 'h2',
-  size = 'xl',
-  className,
+  size = '2xl',
+  className = '',
   children,
-}: HeadingProps) => {
-  return (
-    <Tag className={cn(sizeMap[size], className)}>
-      {children}
-    </Tag>
-  )
-}
+}: HeadingProps) => (
+  <Tag className={`${sizes[size]} leading-tight font-semibold ${className}`}>
+    {children}
+  </Tag>
+)

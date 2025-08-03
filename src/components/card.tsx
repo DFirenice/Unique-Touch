@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Icon, Ticons } from "@app-ui/Icon"
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 
 export type TCardContent = {
     icon: Ticons

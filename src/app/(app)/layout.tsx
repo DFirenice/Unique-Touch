@@ -3,7 +3,7 @@ import Footer from "@/components/sections/footer"
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <main className="bg-light max-w-full overflow-x-hidden">
+        <main className="bg-light max-w-full overflow-x-hidden text-layer-dark">
             <NavHeader />
             { children }
             <Footer />

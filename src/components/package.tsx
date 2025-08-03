@@ -1,6 +1,6 @@
 import type { TPackage } from "@/data/arrangments.data"
 import { Button } from "@app-ui/button"
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 import { Icon } from "@app-ui/Icon"
 import { cn } from "@/lib/utils"
 

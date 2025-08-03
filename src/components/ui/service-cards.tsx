@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@app-ui/heading"
 import Image from "next/image"
 
 const serviceCards = [
