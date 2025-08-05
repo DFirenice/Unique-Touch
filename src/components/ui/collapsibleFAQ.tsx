@@ -23,7 +23,7 @@ const CollapsibleFAQ = ({ trigger, content, open = false }: TCollapsibleFaqProps
             open={isOpen}
             onOpenChange={state => setOpen(state)}
         >
-            <CollapsibleTrigger className="flex flex-row justify-between items-center w-full">
+            <CollapsibleTrigger className="text-left flex flex-row justify-between items-center w-full">
                 <Heading className="my-4" size="2xl">{ trigger }</Heading>
                 <Icon color="text-brown-dp-1" icon={isOpen ? 'ChevronUp' : 'ChevronDown'} size={32} />
             </CollapsibleTrigger>

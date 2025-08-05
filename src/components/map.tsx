@@ -59,7 +59,7 @@ export default function Map() {
       {showOverlay && (
         <div className="absolute inset-0 flex bg-black/35 z-10 pointer-events-none">
           <span className="m-auto text-lg text-white drop-shadow">
-            Use Ctrl + Scroll to zoom
+            Press Ctrl and Scroll to zoom
           </span>
         </div>
       )}

@@ -209,7 +209,7 @@ const Home = () => {
       
       {/* Subcsribe */}
       <section className="
-        m-section px-4 py-12 min-h-[40vh] flex flex-row items-center justify-between gap-16
+        m-section mb-16 px-4 py-12 min-h-[40vh] flex flex-row items-center justify-between gap-16
         bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75vh] bg-center bg-brown-dp-1
         text-layer-dark text-pretty max-md:text-center
       ">

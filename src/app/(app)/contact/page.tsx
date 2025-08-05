@@ -10,7 +10,20 @@ import Map from "@/components/map"
 const Contact = () => {
   return (
     <>
-      <section className="mt-32 px-4">
+      <section className="px-4 min-h-[60vh] h-96 text-layer-dark bg-[linear-gradient(to_top,rgba(0,0,0,0.38),rgba(0,0,0,0.38)),url('/images/hero-bg.jpeg')] bg-center bg-cover bg-no-repeat">
+            <div className="flex h-full flex-col gap-4 w-full items-center justify-center">
+                <Heading size="5xl" className="capitalize text-center max-md:text-4xl">
+                    <span>Your Path to Wellness</span><br />
+                    <span className="text-text-accent"> is Just a Message Away</span>
+                </Heading>
+                <div className="text-base font-medium">
+                    <span className="text-text-accent">Home </span>
+                    <span>/ Contact</span>
+                </div>
+            </div>
+        </section>
+    
+      <section className="mt-24 px-4">
         <div className="w-full text-layer-light container mx-auto">
           <div className="flex justify-between items-center lg:items-end flex-col gap-4 max-lg:text-center lg:flex-row">
             <Heading size="4xl" className="capitalize flex flex-col">
@@ -22,7 +35,8 @@ const Contact = () => {
           <ContactForm />
         </div>
       </section>
-      <section className="mt-24 px-4">
+
+      <section className="mt-32 px-4">
         <div className="w-full text-layer-light container mx-auto">
           <div className="flex max-sm:*:min-w-[40vw] *:flex-1 *:basis-0 flex-wrap flex-row justify-center gap-y-12 gap-4 md:gap-x-6 max-sm:text-xs max-md:text-sm">
             {/* Contact Card */}
@@ -60,12 +74,14 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <SocialMediaLinks className="justify-center" />
+          <SocialMediaLinks className="justify-center my-16" />
         </div>
       </section>
+
       <section className="w-full my-24">
         <Map />
       </section>
+
       <section className="mx-4 mt-24">
         <div className="px-4 text-layer-light w-full container mx-auto flex flex-col max-lg:gap-y-12 gap-8 lg:flex-row justify-center lg:justify-around">
           <div className="max-lg:text-center px-4">
@@ -85,6 +101,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
       <section className="mt-16" />
     </>
   )

@@ -11,6 +11,19 @@ import './styles.css'
 const AboutPage = () => {
     return (
         <>
+            <section className="px-4 min-h-[60vh] h-96 text-layer-dark bg-[linear-gradient(to_top,rgba(0,0,0,0.38),rgba(0,0,0,0.38)),url('/images/hero-bg.jpeg')] bg-center bg-cover bg-no-repeat">
+                <div className="flex h-full flex-col gap-4 w-full items-center justify-center">
+                    <Heading size="5xl" className="capitalize text-center max-md:text-4xl">
+                        <span>Rooted in Care</span><br />
+                        <span className="text-text-accent">Growing in Wellness</span>
+                    </Heading>
+                    <div className="text-base font-medium">
+                        <span className="text-text-accent">Home </span>
+                        <span>/ About</span>
+                    </div>
+                </div>
+            </section>
+
             <section className="mt-28 max-md:min-h-[50vh] text-layer-light w-full">
                 <div className="container px-4 flex h-full flex-col justify-center mx-auto">
                     <div className="w-full flex max-md:text-center md:justify-between items-center md:items-end flex-col md:flex-row gap-4">

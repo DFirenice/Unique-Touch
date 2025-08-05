@@ -37,7 +37,7 @@ const NavHeader = () => {
     // Modile: dropdown
     const handleDropdown = () => setDropdownOpen(state => !state)
 
-    const navLinks = [['Home', '/'], ['About', '/about'], ['Services', '/#services'], ['Contact', '/contact']]
+    const navLinks = [['Home', '/'], ['About', '/about'], ['Services', '/services'], ['Contact', '/contact']]
 
     const renderDropdown = () => {
         return dropdownOpen ? (
@@ -97,7 +97,7 @@ const NavHeader = () => {
                 </div>
                 <div>
                     <Icon icon={dropdownOpen ? "CircleX" : "AlignJustify" } size={28} className="lg:hidden drop-shadow-xs drop-shadow-black/50" onClick={handleDropdown} />
-                    <Button className="max-lg:hidden" size="lg">Sign Up</Button>
+                    <Button variant="light" className="max-lg:hidden" size="lg">Sign Up</Button>
                 </div>
             </header>
             { renderDropdown() }

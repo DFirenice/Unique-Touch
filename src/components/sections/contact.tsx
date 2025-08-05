@@ -9,7 +9,7 @@ import Image from 'next/image'
 import type { TContactParams } from '@/schemas/validationSchemas'
 import { cn } from '@/lib/utils'
 
-const fieldClass = "text-sm placeholder-accent-foreground/50 border bg-background/50 shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50"
+const fieldClass = "text-sm placeholder-accent-foreground/50 border bg-background/50 shadow-xs hover:bg-accent/65 dark:bg-input/10 dark:border-input/50 dark:hover:bg-input/20"
 
 const ContactForm = () => {
     const handleSubmit = async (values: TContactParams, actions: FormikHelpers<TContactParams>) => {
