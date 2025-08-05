@@ -5,6 +5,7 @@ import CollapsibleFAQ from "@app-ui/collapsibleFAQ"
 import { Icon } from "@app-ui/Icon"
 import { Heading } from "@app-ui/heading"
 import { faqData } from "@/data/faqData"
+import Map from "@/components/map"
 
 const Contact = () => {
   return (
@@ -61,6 +62,9 @@ const Contact = () => {
           </div>
           <SocialMediaLinks className="justify-center" />
         </div>
+      </section>
+      <section className="w-full my-24">
+        <Map />
       </section>
       <section className="mx-4 mt-24">
         <div className="px-4 text-layer-light w-full container mx-auto flex flex-col max-lg:gap-y-12 gap-8 lg:flex-row justify-center lg:justify-around">

@@ -8,7 +8,7 @@ import SocialMediaLinks from "@app-comps/socialMediaLinks"
 const Footer = () => {
     return (
         <section className="text-layer-light mx-4">
-            <div className="px-4 flex flex-col md:flex-row gap-12 justify-between w-full py-12 lg:px-12">
+            <div className="container mx-auto px-4 flex flex-col md:flex-row gap-12 justify-between w-full py-12 lg:px-12">
                 {/* Logo */}
                 <div className="flex flex-col md:gap-6 min-w-max">
                     <div className="flex flex-row gap-4 items-center max-md:hidden">
