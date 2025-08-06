@@ -17,7 +17,7 @@ export default function Map() {
     const map = new maptilersdk.Map({
       container: mapContainer.current,
       style: '/map-style.json',
-      center: [-79.63608, 43.59265], // Mississauga center
+      center: [-79.5984465, 43.5941405], // Mississauga center
       zoom: 16,
       scrollZoom: false,
       dragRotate: false,
@@ -37,10 +37,11 @@ export default function Map() {
     })
 
     map.on('dragstart', () => setShowOverlay(false))
+    map.on('click', () => setShowOverlay(false))
     // map.on('dragend', () => setShowOverlay(true))
 
     // Hard-coded point near Mississauga
-    const locationPoint = [-79.638, 43.59365] as maptilersdk.LngLatLike // slightly NW
+    const locationPoint = [-79.59919513349892, 43.59457393948794] as maptilersdk.LngLatLike // slightly NW
     const popup = new Popup({ offset: 25 }).setHTML(
       `<h3 class="text-brown-dp-0 font-bold text-xl z-[9]">UT 4 Wellness</h3><p class="text-brown-dp-1">Unique Touch for Wellness Location</p>`
     )

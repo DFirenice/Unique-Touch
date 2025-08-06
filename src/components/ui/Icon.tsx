@@ -1,6 +1,7 @@
 import * as LucideIcons from 'lucide-react'
 import type { LucideProps } from 'lucide-react'
 import { clsx } from 'clsx'
+import React from 'react'
 
 export type Ticons = keyof typeof LucideIcons
 
@@ -15,7 +16,7 @@ export const Icon = ({
     color,
     ...props
 }: { icon: Ticons } & LucideProps) => {
-    const IconComponent = LucideIcons[icon]
+    const IconComponent = LucideIcons[icon] as React.ElementType
     return (
         <IconComponent
             {...DEFAULT_ICON_PROPS}

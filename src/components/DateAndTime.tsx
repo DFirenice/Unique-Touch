@@ -22,7 +22,7 @@ const DateAndTime = (
     
     const [open, setOpen] = React.useState(false)
     const [time, setTime] = React.useState("hh:mm:00")
-    const [error, setError] = React.useState<string | null>(null)
+    const [error] = React.useState<string | null>(null)
 
     const currentDate = new Date()
     const maxDate = addDays(currentDate, 21)

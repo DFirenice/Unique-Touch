@@ -21,7 +21,9 @@ export const BookingSchema = Yup.object().shape({
     service: Yup.string().required('* Pick your preferred service'),
     date: Yup.date().required('* Date is required!'),
     time: Yup.string().required('* Time is required! '),
-    note: Yup.string().max(250, "* Max message length is 250 chars")
+    note: Yup.string()
+        .max(250, "* Max message length is 250 chars")
+        .default('')
 })
 
 export type TBookingParams = InferType<typeof BookingSchema>

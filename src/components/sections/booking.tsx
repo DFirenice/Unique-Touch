@@ -16,7 +16,7 @@ import { cn } from '@/lib/utils'
 const fieldClass = "text-sm placeholder-accent-foreground/50 border bg-background/50 shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50"
 
 const BookingForm = () => {
-    const [date, setDate] = useState<Date | undefined>(undefined)
+    const [ date, setDate ] = useState<Date | undefined>(undefined)
 
     const handleSubmit = async (values: TBookingParams, actions: FormikHelpers<TBookingParams>) => {
         await new Promise(resolve => { setTimeout(resolve, 1000) })
