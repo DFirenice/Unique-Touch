@@ -1,0 +1,83 @@
+import * as Yup from 'yup'
+import { escape } from 'lodash'
+import { TBookingParams, BookingSchema } from "@/schemas/validationSchemas";
+import { NextResponse } from "next/server";
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+// New Booking Email Body
+const getBodyResponseHTML = (data: TBookingParams): string => {
+    const safeNote = escape(data.note) // XSS Prot.
+    return `
+        <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+            <h2 style="color: #333;">📅 New Booking Request</h2>
+            <p style="margin: 16px 0;">You’ve received a new booking request with the following details:</p>
+
+            <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Name:</td>
+                <td style="padding: 8px;">${data.name}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Phone:</td>
+                <td style="padding: 8px;">${data.phone}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Service:</td>
+                <td style="padding: 8px;">${data.service}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Date:</td>
+                <td style="padding: 8px;">${data.date}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; font-weight: bold;">Time:</td>
+                <td style="padding: 8px;">${data.time}</td>
+            </tr>
+            ${data.note
+                    ? `<tr>
+                    <td style="padding: 8px; font-weight: bold;">Note:</td>
+                    <td style="padding: 8px;">${safeNote}</td>
+                    </tr>`
+                    : ''
+                }
+            </table>
+
+            <p style="margin-top: 24px; font-size: 14px; color: #888;">This message was sent via your booking form.</p>
+        </div>
+    `
+}
+
+export async function POST(req: Request) {
+    const slot: TBookingParams = await req.json()
+
+    try {
+        const validatedData = await BookingSchema.validate(slot, { abortEarly: false })
+
+        resend.emails.send({
+            from: 'onboarding@resend.dev',
+            to: process.env.RESEND_EMAIL!,
+            subject: `New Booking from ${validatedData.name}`,
+            html: getBodyResponseHTML(validatedData)
+        })
+
+        return NextResponse.json({
+            success: true,
+            bookedData: validatedData
+        })
+    }
+
+    catch (error) {
+        console.log(`An error occured sending an email: ${error}`)
+        if (error instanceof Yup.ValidationError) {
+            return NextResponse.json({
+                success: false,
+                errors: error.errors
+            })
+        } else {
+            console.log(`An error occured sending an email: ${error}`)
+            return NextResponse.json({ errors: `An error occured sending an email: ${error}` })
+        }
+    }
+}

@@ -37,7 +37,14 @@ const BookingForm = () => {
             const data = await res.json()
             
             if (data.success && data.score > 0.7) {
-                console.log(values)
+                const res = await fetch('/api/submit-appointment', {
+                    method: "POST",
+                    body: JSON.stringify(values)
+                })
+
+                const data = await res.json()
+                console.log(data)
+                
                 actions.resetForm()
             } else alert('Captcha validation failed. Please, try later.')
         }, [ executeRecaptcha ]

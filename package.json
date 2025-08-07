@@ -27,6 +27,7 @@
     "date-fns": "^4.1.0",
     "formik": "^2.4.6",
     "framer-motion": "^12.23.6",
+    "lodash.escape": "^4.0.1",
     "lucide-react": "^0.525.0",
     "maplibre-gl": "^5.6.1",
     "next": "15.4.2",
@@ -36,6 +37,7 @@
     "react-dom": "19.1.0",
     "react-google-recaptcha-v3": "^1.11.0",
     "react-icons": "^5.5.0",
+    "resend": "^6.0.0",
     "tailwind-merge": "^3.3.1",
     "yup": "^1.6.1"
   },
