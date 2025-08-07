@@ -44,13 +44,13 @@ const BookingForm = () => {
     )
 
     return (
-        <section className="my-24 text-layer-dark px-4">
-            <div className="container bg-brown-dp-1 flex items-center gap-4 flex-col md:flex-row xl:max-w-[65%] w-full m-auto rounded-xl overflow-hidden min-h-[50vh] h-full">
-                <div className="relative w-full min-h-[30vh] md:w-2/5 md:h-full md:min-h-[75vh]">
+        <section className="m-section text-layer-dark px-4">
+            <div className="container bg-brown-dp-1 flex items-center gap-4 flex-col md:flex-row w-full m-auto rounded-xl overflow-hidden min-h-[50vh] h-full">
+                <div className="relative w-full min-h-[30vh] md:w-2/5 md:h-full md:min-h-[80vh]">
                     <Image src="/images/about/towels_on_rack.jpg" alt="Book now" fill className="object-cover" />
                 </div>
-                <div className="px-6 py-6 pb-12 md:py-12">
-                    <div className="*:mx-auto max-md:text-center">
+                <div className="px-6 py-6 pb-12 md:py-12 w-full mx-auto max-w-xl">
+                    <div className="max-md:*:mx-auto max-md:text-center">
                         <Heading size="2xl">Feel beautiful, Inside & Out</Heading>
                         <p className="mt-6">Ready to start your Beauva journey? Book your personalized session or reach out to us with any questions.</p>
                     </div>
