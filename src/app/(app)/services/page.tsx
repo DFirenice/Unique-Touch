@@ -42,7 +42,7 @@ const Services = () => {
         </section>
 
         {/* Ready to Reconnect */}
-        <section className="m-24 mb-16 px-4 text-layer-dark">
+        <section className="mt-24 px-4 text-layer-dark">
             <div className="w-full container mx-auto">
                 <div className="
                     flex justify-center items-center flex-col gap-6 min-h-[40vh] overflow-hidden rounded-4xl p-6 text-center

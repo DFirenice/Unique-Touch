@@ -11,9 +11,12 @@ const Subscribe = ({ variation = "dark" }: TColorVariationProps) => {
             "m-section px-4 py-12 min-h-[40vh] flex flex-row items-center justify-between gap-16",
             "bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75vh] bg-center bg-brown-dp-1",
             "text-layer-dark text-pretty max-md:text-center",
-            { "bg-light text-layer-light bg-[linear-gradient(to_top,rgba(255,252,251,0.91)_0%,rgba(255,252,251,1)_150%),url('/images/pattern.svg')]": isLight },
+            { "bg-light text-layer-light bg-[linear-gradient(to_top,rgba(255,252,251,0.9)_0%,rgba(255,252,251,1)_150%),url('/images/pattern.svg')]": isLight },
         )}>
-            <div className="mx-auto container flex flex-col md:flex-row justify-around items-center gap-4">
+            <div className={cn(
+                "mx-auto container flex flex-col md:flex-row justify-around items-center gap-4",
+                { "pb-8": isLight }
+            )}>
                 <div>
                     <Heading size="5xl" className="max-lg:text-4xl lg:max-w-sm text-5xl max-w-lg">
                         <span>Stay Radiant with </span>

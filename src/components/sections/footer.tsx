@@ -17,16 +17,16 @@ const Footer = () => {
                         </div>
                         <Heading size="4xl" className="font-mono">Unique Touch</Heading>
                     </div>
-                    <div className="max-md:text-center">
-                        <Heading size="xl" className="max-md:mx-auto md:mb-4">Working Hours</Heading>
-                        <div className="text-brown-dp-0">
-                            <span className="font-medium">Monday-Saturday : </span>
-                            <span>9.00am - 8.00pm</span>
-                        </div>
-                        <div className="text-brown-dp-0">
-                            <span className="font-medium">Sunday : </span>
-                            <span>Closed</span>
-                        </div>
+                    <div className="max-md:text-center *:max-md:mx-auto">
+                        <Heading size="xl" className="md:mb-4">Working Hours</Heading>
+                        <Heading size="lg" className="text-brown-dp-0 text-wrap break-words max-sm:max-w-48">
+                            <span>Monday - Saturday : </span>
+                            <span className="font-normal">9.00am - 8.00pm</span>
+                        </Heading>
+                        <Heading size="lg" className="text-brown-dp-0">
+                            <span>Sunday : </span>
+                            <span className="font-normal">Closed</span>
+                        </Heading>
                     </div>
                 </div>
                 {/* Links */}
@@ -45,7 +45,7 @@ const Footer = () => {
                     {/* Contact Us */}
                     <div className="flex flex-col gap-4 h-full">
                         <Heading size="2xl">Contact Us</Heading>
-                        <div className="flex flex-col gap-4 *:flex *:flex-row *:gap-2 h-full">
+                        <div className="flex flex-col gap-4 *:flex *:items-center *:flex-row *:gap-2 h-full">
                             <div>
                                 <Icon icon="Phone" color="text-brown-dp-0 min-h-4 min-w-4 w-4 aspect-square" />
                                 <span className="max-w-36">{ "(123) 456-7890" }</span>
