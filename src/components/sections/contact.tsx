@@ -1,5 +1,8 @@
 'use client'
 
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
+import { useCallback } from 'react'
+
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import { ContactSchema } from '@/schemas/validationSchemas'
 import { Button } from '@app-ui/button'
@@ -12,11 +15,28 @@ import { cn } from '@/lib/utils'
 const fieldClass = "text-sm placeholder-accent-foreground/50 border bg-background/50 shadow-xs hover:bg-accent/65 dark:bg-input/10 dark:border-input/50 dark:hover:bg-input/20"
 
 const ContactForm = () => {
-    const handleSubmit = async (values: TContactParams, actions: FormikHelpers<TContactParams>) => {
-        await new Promise(resolve => { setTimeout(resolve, 1000) })
-        console.log(values)
-        actions.resetForm()
-    }
+    const { executeRecaptcha } = useGoogleReCaptcha()
+    
+    const handleSubmit = useCallback(
+        async (values: TContactParams, actions: FormikHelpers<TContactParams>) => {
+            // Captcha is not yet ready
+            if (!executeRecaptcha) return
+
+            const token = await executeRecaptcha('form_submit')
+
+            const res = await fetch('/api/verify-captcha', {
+                method: 'POST',
+                body: JSON.stringify({ token }),
+            })
+
+            const data = await res.json()
+            
+            if (data.success && data.score > 0.7) {
+                console.log(values)
+                actions.resetForm()
+            } else alert('Captcha validation failed. Please, try later.')
+        }, [ executeRecaptcha ]
+    )
     
     return (
         <section className="my-12 text-layer-light">

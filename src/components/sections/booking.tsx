@@ -1,5 +1,8 @@
 'use client'
 
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
+import { useCallback } from 'react'
+
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import FormikSelection from '@app-ui/formikSelection'
 import { BookingSchema } from '@/schemas/validationSchemas'
@@ -17,12 +20,28 @@ const fieldClass = "text-sm placeholder-accent-foreground/50 border bg-backgroun
 
 const BookingForm = () => {
     const [ date, setDate ] = useState<Date | undefined>(undefined)
+    const { executeRecaptcha } = useGoogleReCaptcha()
 
-    const handleSubmit = async (values: TBookingParams, actions: FormikHelpers<TBookingParams>) => {
-        await new Promise(resolve => { setTimeout(resolve, 1000) })
-        console.log(values)
-        actions.resetForm()
-    }
+    const handleSubmit = useCallback(
+        async (values: TBookingParams, actions: FormikHelpers<TBookingParams>) => {
+            // Captcha is not yet ready
+            if (!executeRecaptcha) return
+
+            const token = await executeRecaptcha('form_submit')
+
+            const res = await fetch('/api/verify-captcha', {
+                method: 'POST',
+                body: JSON.stringify({ token }),
+            })
+
+            const data = await res.json()
+            
+            if (data.success && data.score > 0.7) {
+                console.log(values)
+                actions.resetForm()
+            } else alert('Captcha validation failed. Please, try later.')
+        }, [ executeRecaptcha ]
+    )
 
     return (
         <section className="my-24 text-layer-dark px-4">
@@ -35,7 +54,12 @@ const BookingForm = () => {
                         <Heading size="2xl">Feel beautiful, Inside & Out</Heading>
                         <p className="mt-6">Ready to start your Beauva journey? Book your personalized session or reach out to us with any questions.</p>
                     </div>
-                    <Formik initialValues={{ name: '', phone: '', service: '', date: '' as unknown as Date, time: '', note: '' }} onSubmit={handleSubmit} validateOnBlur={true} validationSchema={BookingSchema} >
+                    <Formik
+                        initialValues={{ name: '', phone: '', service: '', date: '' as unknown as Date, time: '', note: '' }}
+                        onSubmit={handleSubmit}
+                        validateOnBlur={true}
+                        validationSchema={BookingSchema}
+                    >
                         {({ isSubmitting }) => (
                             <Form autoComplete="off" className="flex flex-col mt-6 gap-5 *:relative *:*:w-full">
                                 <div>

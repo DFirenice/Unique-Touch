@@ -16,12 +16,12 @@ import { useFormikContext } from "formik"
 
 const DateAndTime = (
     { date, setDate, dateName, timeName }:
-    { date: Date | undefined, setDate: (date: Date) => void, dateName: string, timeName: string }
+        { date: Date | undefined, setDate: (date: Date) => void, dateName: string, timeName: string }
 ) => {
     const { setFieldValue, setFieldError } = useFormikContext()
-    
+
     const [open, setOpen] = React.useState(false)
-    const [time, setTime] = React.useState("hh:mm:00")
+    const [time, setTime] = React.useState("HH:mm") // Changed to HH:mm
     const [error] = React.useState<string | null>(null)
 
     const currentDate = new Date()
@@ -30,11 +30,11 @@ const DateAndTime = (
     const validateTime = (timeStr: string) => {
         if (!date) return
 
-        const [h, m, s] = timeStr.split(":").map(Number)
+        const [h, m] = timeStr.split(":").map(Number)
         const selectedTime = new Date(date)
         selectedTime.setHours(h)
         selectedTime.setMinutes(m)
-        selectedTime.setSeconds(s || 0)
+        selectedTime.setSeconds(0)
 
         const opening = new Date(date)
         opening.setHours(10, 0, 0)
@@ -102,14 +102,14 @@ const DateAndTime = (
                     <Input
                         type="time"
                         id="time-picker"
-                        step="1"
+                        step="60" // Changed to 60 seconds (1 minute increments)
                         value={time}
-                        min="10:00:00"
-                        max="21:30:00"
+                        min="10:00"
+                        max="21:30"
                         onChange={handleTimeChange}
                         className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
                     />
-                    { error && <p className="min-w-min w-full absolute top-full capitalize text-text-accent text-xs">{ error }</p> }
+                    {error && <p className="min-w-min w-full absolute top-full capitalize text-text-accent text-xs">{error}</p>}
                 </div>
             </div>
         </div>

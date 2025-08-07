@@ -1,3 +1,5 @@
+'use client'
+
 import { Separator } from "@/components/ui/separator"
 import ContactForm from "@app-comps/sections/contact"
 import SocialMediaLinks from "@app-comps/socialMediaLinks"
@@ -5,7 +7,8 @@ import CollapsibleFAQ from "@app-ui/collapsibleFAQ"
 import { Icon } from "@app-ui/Icon"
 import { Heading } from "@app-ui/heading"
 import { faqData } from "@/data/faqData"
-import Map from "@/components/map"
+import Map from "@app-comps/map"
+import CaptchaWrapper from "@app-comps/captcha/captcha-wrapper"
 
 const Contact = () => {
   return (
@@ -32,7 +35,9 @@ const Contact = () => {
             </Heading>
             <p className="max-w-sm lg:max-w-md">{`Whether you're ready to book or simply have questions, we'd love to hear from you.`}</p>
           </div>
-          <ContactForm />
+          <CaptchaWrapper>
+            <ContactForm />
+          </CaptchaWrapper>
         </div>
       </section>
 

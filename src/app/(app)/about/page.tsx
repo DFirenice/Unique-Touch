@@ -1,3 +1,6 @@
+'use client'
+
+import CaptchaWrapper from "@/components/captcha/captcha-wrapper"
 import { Heading } from "@app-ui/heading"
 import { Separator } from "@/components/ui/separator"
 import { Icon } from "@/components/ui/Icon"
@@ -103,7 +106,9 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            <BookingSection />
+            <CaptchaWrapper>
+                <BookingSection />
+            </CaptchaWrapper>
         </>
     )
 }

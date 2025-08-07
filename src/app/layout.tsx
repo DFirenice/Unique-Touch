@@ -3,7 +3,6 @@ import { Work_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 // variable, subsets
-
 const workSans = Work_Sans({
   variable: "--font-work-sans",
   subsets: ["latin"],

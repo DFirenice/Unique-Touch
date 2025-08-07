@@ -83,7 +83,7 @@ const NavHeader = () => {
                     </div>
                     <Heading size="2xl" className="font-mono max-md:hidden drop-shadow-sm">Unique Touch</Heading>
                 </div>
-                <div className="font-medium absolute text-center inset-x-0 flex-1 mx-auto max-lg:hidden *:px-4">
+                <div className="font-medium absolute text-center right-1/2 translate-x-1/2 flex-1 mx-auto max-lg:hidden *:px-4">
                     { navLinks.map(
                         ([text, link], i) => (
                             <Link href={link} className={cn(
