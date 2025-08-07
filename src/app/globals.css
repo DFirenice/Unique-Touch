@@ -161,7 +161,7 @@ section {
 }
 
 .m-section {
-  @apply mt-24;
+  @apply mt-24 md:mt-32;
 }
 
 .section-container {
@@ -216,6 +216,40 @@ img {
 p, span, blockquote,
 h1, h2, h3, h4, h5, h6 {
   @apply text-pretty max-md:max-w-sm md:max-w-prose;
+}
+
+/*
+  Only used to change footer section.
+  Adapts the color scheme based off what schema element was its preceding sibling
+*/
+section[data-theme-variation="light"]:has(+ .adaptable-footer) {
+  & + section {
+    --text-base: var(--color-light);
+    --text-accent: var(--color-text-accent);
+    color: var(--text-base);
+
+    & > * { color: inherit; }
+
+    & *.text-brown-dp-0 {
+      @apply text-text-accent;
+    }
+
+    & *[data-slot="separator"] {
+      @apply bg-text-accent/38;
+    }
+
+    & *[data-slot="button"]:has(svg) {
+      @apply bg-surface-light;
+      &, & * { @apply text-brown-dp-0; }
+      &:hover { @apply bg-surface-light/60; }
+    }
+
+    & *[ data-slot="copyright"] {
+      @apply text-text-accent/87;
+    }
+    
+    @apply bg-brown-dp-1;
+  }
 }
 
 .dark {

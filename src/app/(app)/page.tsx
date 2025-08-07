@@ -7,6 +7,7 @@ import Tag from "@app-ui/tag"
 import Link from "next/link"
 
 import Hero from "@/components/sections/Hero"
+import Subscribe from "@/components/sections/subscribe"
 import ServiceCards from "@app-comps/ui/service-cards"
 import Card from "@app-comps/card"
 import Package from "@app-comps/package"
@@ -14,7 +15,6 @@ import Package from "@app-comps/package"
 import { ExperienceDataP1, ExperienceDataP2 } from "@/data/services.data"
 import { bookingStepsData, packagesData, TPackage } from "@/data/arrangments.data"
 import { Separator } from "@app-comps/ui/separator"
-import { Input } from "@/components/ui/input"
 
 const Home = () => {
   return (
@@ -207,35 +207,7 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Subcsribe */}
-      <section className="
-        m-section mb-16 px-4 py-12 min-h-[40vh] flex flex-row items-center justify-between gap-16
-        bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75vh] bg-center bg-brown-dp-1
-        text-layer-dark text-pretty max-md:text-center
-      ">
-        <div className="mx-auto container flex flex-col md:flex-row justify-around items-center gap-4">
-          <div>
-            <Heading size="5xl" className="max-lg:text-4xl lg:max-w-sm text-5xl max-w-lg">
-              <span>Stay Radiant with </span>
-              <span className="text-text-accent">Unique Touch</span>
-            </Heading>
-          </div>
-          <div>
-            <p className="mb-6 text-text-accent max-md:max-w-sm max-w-md">Sign up to receive exclusive offers, beauty tips, and wellness inspiration.</p>
-            <div>
-              <div className="flex flex-row w-full max-w-sm *:border-none">
-                <Input placeholder="Enter your email" className="
-                  flex-1 rounded-l-full rounded-r-none
-                  text-light pl-6 placeholder-brown-dp-1
-                " autoComplete="off" />
-                <Button className="rounded-l-none rounded-r-full bg-brown-dp-0 text-text-accent" variant="outline">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Subscribe />
     </>
   )
 }

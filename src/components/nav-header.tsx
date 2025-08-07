@@ -31,7 +31,7 @@ const NavHeader = () => {
     }, [])
     
     // Trigger
-    const fullCondition = (isMinimized || dropdownOpen || path === '/about' || path === '/contact')
+    const fullCondition = (isMinimized || dropdownOpen)
     const minimizedCondition = (!isMinimized || dropdownOpen)
 
     // Modile: dropdown
@@ -97,7 +97,7 @@ const NavHeader = () => {
                 </div>
                 <div>
                     <Icon icon={dropdownOpen ? "CircleX" : "AlignJustify" } size={28} className="lg:hidden drop-shadow-xs drop-shadow-black/50" onClick={handleDropdown} />
-                    <Button variant="light" className="max-lg:hidden" size="lg">Sign Up</Button>
+                    <Button variant="light" className="max-lg:hidden" size="lg">Book Now</Button>
                 </div>
             </header>
             { renderDropdown() }

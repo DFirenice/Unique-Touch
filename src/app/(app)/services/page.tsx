@@ -2,6 +2,7 @@ import { Heading } from "@app-comps/ui/heading"
 import ServiceCard from "@app-comps/serviceCard"
 import { ServicesData } from "@/data/services.data"
 import { Button } from "@/components/ui/button"
+import Subscribe from "@/components/sections/subscribe"
 
 const Services = () => {
   return (
@@ -9,8 +10,8 @@ const Services = () => {
         <section className="px-4 min-h-[60vh] h-96 text-layer-dark bg-[linear-gradient(to_top,rgba(0,0,0,0.38),rgba(0,0,0,0.38)),url('/images/hero-bg.jpeg')] bg-center bg-cover bg-no-repeat">
             <div className="flex h-full flex-col gap-4 w-full items-center justify-center">
                 <Heading size="5xl" className="capitalize text-center max-md:text-4xl">
-                    <span>Our spa & Wellness</span><br />
-                    <span>Treatments</span>
+                    <span>Discover the Treatments</span><br />
+                    <span className="text-text-accent">That Restore Balance</span>
                 </Heading>
                 <div className="text-base font-medium">
                     <span className="text-text-accent">Home </span>
@@ -19,6 +20,7 @@ const Services = () => {
             </div>
         </section>
 
+        {/* Service tiles */}
         <section className="px-4 m-section text-layer-light">
             <div className="w-full container mx-auto">
                 <div className="flex justify-between items-center lg:items-end flex-col gap-4 max-lg:text-center lg:flex-row">
@@ -39,7 +41,8 @@ const Services = () => {
             </div>
         </section>
 
-        <section className="m-section mb-16 px-4 text-layer-dark">
+        {/* Ready to Reconnect */}
+        <section className="m-24 mb-16 px-4 text-layer-dark">
             <div className="w-full container mx-auto">
                 <div className="
                     flex justify-center items-center flex-col gap-6 min-h-[40vh] overflow-hidden rounded-4xl p-6 text-center
@@ -60,6 +63,8 @@ const Services = () => {
                 </div>
             </div>
         </section>
+
+        <Subscribe variation="light" />
     </>
   )
 }

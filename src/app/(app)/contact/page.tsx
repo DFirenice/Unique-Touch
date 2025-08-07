@@ -9,6 +9,7 @@ import { Heading } from "@app-ui/heading"
 import { faqData } from "@/data/faqData"
 import Map from "@app-comps/map"
 import CaptchaWrapper from "@app-comps/captcha/captcha-wrapper"
+import Subscribe from "@/components/sections/subscribe"
 
 const Contact = () => {
   return (
@@ -26,7 +27,7 @@ const Contact = () => {
             </div>
         </section>
     
-      <section className="mt-24 px-4">
+      <section className="m-section px-4">
         <div className="w-full text-layer-light container mx-auto">
           <div className="flex justify-between items-center lg:items-end flex-col gap-4 max-lg:text-center lg:flex-row">
             <Heading size="4xl" className="capitalize flex flex-col">
@@ -87,7 +88,7 @@ const Contact = () => {
         <Map />
       </section>
 
-      <section className="mx-4 mt-24">
+      <section className="mx-4 m-section">
         <div className="px-4 text-layer-light w-full container mx-auto flex flex-col max-lg:gap-y-12 gap-8 lg:flex-row justify-center lg:justify-around">
           <div className="max-lg:text-center px-4">
             <Heading size="4xl">
@@ -107,7 +108,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="mt-16" />
+      <Subscribe />
     </>
   )
 }

@@ -7,8 +7,8 @@ import SocialMediaLinks from "@app-comps/socialMediaLinks"
 
 const Footer = () => {
     return (
-        <section className="text-layer-light mx-4">
-            <div className="container mx-auto px-4 flex flex-col md:flex-row gap-12 justify-between w-full py-12 lg:px-12">
+        <section className="adaptable-footer text-layer-light px-4 pt-16">
+            <div className="container mx-auto max-md:px-4 flex flex-col md:flex-row gap-12 justify-between w-full py-12">
                 {/* Logo */}
                 <div className="flex flex-col md:gap-6 min-w-max">
                     <div className="flex flex-row gap-4 items-center max-md:hidden">
@@ -18,7 +18,7 @@ const Footer = () => {
                         <Heading size="4xl" className="font-mono">Unique Touch</Heading>
                     </div>
                     <div className="max-md:text-center">
-                        <Heading size="xl" className="max-md:mx-auto">Working Hours</Heading>
+                        <Heading size="xl" className="max-md:mx-auto md:mb-4">Working Hours</Heading>
                         <div className="text-brown-dp-0">
                             <span className="font-medium">Monday-Saturday : </span>
                             <span>9.00am - 8.00pm</span>
@@ -64,12 +64,12 @@ const Footer = () => {
                 </div>
             </div>
             {/* Copyright */}
-            <div className="w-full mx-auto">
+            <div className="w-full mx-auto" data-slot="copyright">
                 <Separator orientation="horizontal" />
-                <div className="flex flex-col max-md:text-center md:flex-row justify-between gap-2 md:gap-6 w-full pt-6 pb-10">
+                <div className="container mx-auto flex flex-col max-md:text-center md:flex-row justify-between gap-2 md:gap-6 w-full pt-6 pb-10">
                     <div className="max-md:*:font-medium">
                         <span className="mr-[1ch]">Copyright © { new Date().getFullYear() }</span>
-                        <span>Unique Touch</span>
+                        <span>Unique Touch 4 Wellness</span>
                     </div>
                     <div>
                         <Link href="" className="mr-6">Privacy Policy</Link>
