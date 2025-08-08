@@ -46,7 +46,7 @@ const BookingForm = () => {
                 console.log(data)
                 
                 actions.resetForm()
-            } else alert('Captcha validation failed. Please, try later.')
+            } else alert('Captcha validation failed. Please try again later.')
         }, [ executeRecaptcha ]
     )
 

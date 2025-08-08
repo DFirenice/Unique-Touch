@@ -32,9 +32,22 @@ const ContactForm = () => {
             const data = await res.json()
             
             if (data.success && data.score > 0.7) {
-                console.log(values)
+                const res = await fetch('/api/submit-question', {
+                    method: 'POST',
+                    body: JSON.stringify(values)
+                })
+
+                const resData = await res.json()
+                if (resData.success && resData.sentMessage) {
+                    console.log(resData)
+                    // trigger success popup
+                } else {
+                    console.error(resData.errors)
+                    // trigger an error popup
+                }
+                
                 actions.resetForm()
-            } else alert('Captcha validation failed. Please, try later.')
+            } else alert('Captcha validation failed. Please try again later.')
         }, [ executeRecaptcha ]
     )
     
@@ -74,7 +87,7 @@ const ContactForm = () => {
                                     <ErrorMessage className="absolute capitalize text-shadow-brown-dp-1 text-xs" name="message" component="div" />
                                 </div>
                                 <Button variant="secondary" className="inline-flex md:w-min mt-8 w-full" type="submit" disabled={isSubmitting}>
-                                    {isSubmitting ? 'Sendind...' : 'Send Message'}
+                                    {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </Button>
                             </Form>
                         )}

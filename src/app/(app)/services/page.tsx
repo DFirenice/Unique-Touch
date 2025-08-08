@@ -42,10 +42,10 @@ const Services = () => {
         </section>
 
         {/* Ready to Reconnect */}
-        <section className="mt-24 px-4 text-layer-dark">
-            <div className="w-full container mx-auto">
+        <section className="mt-24 md:px-4 text-layer-dark">
+            <div className="w-full md:container mx-auto">
                 <div className="
-                    flex justify-center items-center flex-col gap-6 min-h-[40vh] overflow-hidden rounded-4xl p-6 text-center
+                    flex justify-center items-center flex-col gap-6 min-h-[40vh] overflow-hidden md:rounded-4xl p-6 text-center
                     bg-[linear-gradient(to_top,rgba(114,91,75,0.87),rgba(114,91,75,0.87)),url('/images/about/towels_on_rack.jpg')] bg-center bg-cover bg-no-repeat
                 ">
                     <div className="max-md:py-4">
