@@ -36,9 +36,10 @@ const Subscribe = ({ variation = "dark" }: TColorVariationProps) => {
                             <Input
                                 placeholder="Enter your email"
                                 className={cn(
-                                    "flex-1 rounded-l-full rounded-r-none text-light pl-6",
-                                    { "text-brown-dp-0": isLight }
+                                    "flex-1 rounded-l-full rounded-r-none text-light pl-6 bg-light/15",
+                                    { "text-brown-dp-0 bg-surface-accent": isLight }
                                 )}
+                                isDark
                                 autoComplete="off"
                             />
                             <Button
