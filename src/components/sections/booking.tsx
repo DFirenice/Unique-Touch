@@ -18,7 +18,7 @@ import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
 import { Icon } from '@app-ui/Icon'
 
-const fieldClass = "text-sm placeholder-accent-foreground/50 border border-input shadow-xs hover:bg-light/5 hover:text-accent-foreground"
+const fieldClass = "lg:text-sm placeholder-accent-foreground/50 border border-input shadow-xs hover:bg-light/5 hover:text-accent-foreground"
 
 const BookingForm = () => {
     const [ date, setDate ] = useState<Date | undefined>(undefined)

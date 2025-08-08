@@ -1,7 +1,7 @@
 'use client'
 
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
-import { CSSProperties, useCallback } from 'react'
+import { useCallback } from 'react'
 
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import { ContactSchema } from '@/schemas/validationSchemas'

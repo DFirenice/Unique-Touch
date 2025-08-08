@@ -49,7 +49,7 @@ const genHTMLBodyResponse = (data: TBookingParams): string => {
             }
             </table>
 
-            <p style="margin-top: 24px; font-size: 14px; color: #888;">This message was sent via booking.</p>
+            <p style="margin-top: 24px; font-size: 14px; color: #888;">This message was sent via website's booking form.</p>
         </div>
     `
 }
