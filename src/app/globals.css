@@ -15,7 +15,6 @@ section {
 }
 
 :root {
-
   --color-light: #FFFCFB;
   --color-primary: #AAA896;
   --color-surface-light: #F5F2ED;
@@ -250,6 +249,24 @@ section[data-theme-variation="light"]:has(+ .adaptable-footer) {
     
     @apply bg-brown-dp-1;
   }
+}
+
+/* Too skill-issued to change broken styles withing comp. itself */
+*[data-sonner-toast][data-styled=true] {
+  background: var(--color-brown-dp-1) !important;
+  border: 1px solid var(--color-input) !important;
+  color: var(--color-white) !important;
+  gap: calc(var(--spacing) * 4) !important;
+  & *[data-description] {
+    color: var(--color-text-accent) !important;
+  }
+}
+
+/* Workaround for IOS zoom on input selection */
+input,
+textarea,
+select {
+  @apply max-lg:text-base;
 }
 
 .dark {

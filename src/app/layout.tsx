@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Work_Sans, Roboto_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 // variable, subsets
@@ -17,6 +18,7 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Unique Touch",
   description: "Website designed for Unique Touch 4 Wellness massage & therapies",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 };
 
 export default function RootLayout({
@@ -30,6 +32,11 @@ export default function RootLayout({
         className={`${workSans.variable} ${robotoMono.variable} antialiased m-0 p-0`}
       >
         {children}
+        {/* Ｎｏｔｅ： Add visible time-left progression bar */}
+        <Toaster
+          position="top-center"
+          duration={6500}
+        />
       </body>
     </html>
   );

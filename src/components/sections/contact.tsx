@@ -1,18 +1,20 @@
 'use client'
 
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
-import { useCallback } from 'react'
+import { CSSProperties, useCallback } from 'react'
 
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import { ContactSchema } from '@/schemas/validationSchemas'
 import { Button } from '@app-ui/button'
 import { Heading } from '@app-ui/heading'
 import Image from 'next/image'
+import { toast } from 'sonner'
 
 import type { TContactParams } from '@/schemas/validationSchemas'
 import { cn } from '@/lib/utils'
+import { Icon } from '../ui/Icon'
 
-const fieldClass = "text-sm placeholder-accent-foreground/50 border border-input/25 bg-background/50 shadow-xs hover:bg-accent/65"
+const fieldClass = "lg:text-sm placeholder-accent-foreground/50 border border-input/25 bg-background/50 shadow-xs hover:bg-accent/65"
 
 const ContactForm = () => {
     const { executeRecaptcha } = useGoogleReCaptcha()
@@ -40,10 +42,18 @@ const ContactForm = () => {
                 const resData = await res.json()
                 if (resData.success && resData.sentMessage) {
                     console.log(resData)
-                    // trigger success popup
+                    toast("Message Sent Successfully!", {
+                        description: "We have recieved your message and will reply you shortly!",
+                        icon: <Icon icon="BadgeCheck" size={28} />,
+                        position: 'top-center',
+                    })
                 } else {
                     console.error(resData.errors)
-                    // trigger an error popup
+                    toast("We couldn't deliver your message!", {
+                        description: "An error occured while sending, please try again later.",
+                        icon: <Icon icon="BadgeX" size={28} />,
+                        position: 'top-center',
+                    })
                 }
                 
                 actions.resetForm()

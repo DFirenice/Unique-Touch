@@ -15,6 +15,8 @@ import { useState } from 'react'
 import type { TBookingParams } from '@/schemas/validationSchemas'
 import { serviceOptions } from '@/data/bookingForm.data'
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
+import { Icon } from '@app-ui/Icon'
 
 const fieldClass = "text-sm placeholder-accent-foreground/50 border border-input shadow-xs hover:bg-light/5 hover:text-accent-foreground"
 
@@ -44,9 +46,20 @@ const BookingForm = () => {
 
                 const data = await res.json()
                 console.log(data)
+                toast("Appointment Made Successfully!", {
+                    description: "We have recieved your booking and will contact you later for confirmation!",
+                    icon: <Icon icon="BadgeCheck" size={28} />,
+                    position: 'top-center',
+                })
                 
                 actions.resetForm()
-            } else alert('Captcha validation failed. Please try again later.')
+            } else {
+                toast("We couldn't book you!", {
+                    description: "An error occured, please try again later.",
+                    icon: <Icon icon="BadgeX" size={28} />,
+                    position: 'top-center',
+                })
+            }
         }, [ executeRecaptcha ]
     )
 
