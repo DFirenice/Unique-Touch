@@ -9,9 +9,15 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 // New Booking Email Body
 const getBodyResponseHTML = (data: TBookingParams): string => {
     const safeNote = escape(data.note) // XSS Prot.
+    const formattedDate = data.date.toLocaleDateString('en-US', {
+        weekday: 'long',
+        month: 'short',
+        day: 'numeric'
+    })
+
     return `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
-            <h2 style="color: #333;">📅 New Booking Request</h2>
+            <h2 style="color: #333;">🔔 New Booking Request</h2>
             <p style="margin: 16px 0;">You’ve received a new booking request with the following details:</p>
 
             <table style="width: 100%; border-collapse: collapse;">
@@ -29,7 +35,7 @@ const getBodyResponseHTML = (data: TBookingParams): string => {
             </tr>
             <tr>
                 <td style="padding: 8px; font-weight: bold;">Date:</td>
-                <td style="padding: 8px;">${data.date}</td>
+                <td style="padding: 8px;">${formattedDate}</td>
             </tr>
             <tr>
                 <td style="padding: 8px; font-weight: bold;">Time:</td>
@@ -44,7 +50,7 @@ const getBodyResponseHTML = (data: TBookingParams): string => {
                 }
             </table>
 
-            <p style="margin-top: 24px; font-size: 14px; color: #888;">This message was sent via your booking form.</p>
+            <p style="margin-top: 24px; font-size: 14px; color: #888;">This message was sent via booking.</p>
         </div>
     `
 }
@@ -57,7 +63,7 @@ export async function POST(req: Request) {
 
         resend.emails.send({
             from: 'onboarding@resend.dev',
-            to: process.env.RESEND_EMAIL!,
+            to: [process.env.RESEND_RECIEVER_EMAIL!],
             subject: `New Booking from ${validatedData.name}`,
             html: getBodyResponseHTML(validatedData)
         })
