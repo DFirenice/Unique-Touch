@@ -21,7 +21,7 @@ const DateAndTime = (
     const { setFieldValue, setFieldError } = useFormikContext()
 
     const [open, setOpen] = React.useState(false)
-    const [time, setTime] = React.useState("HH:mm") // Changed to HH:mm
+    const [time, setTime] = React.useState("12:00") // Changed to HH:mm
     const [error] = React.useState<string | null>(null)
 
     const currentDate = new Date()
@@ -68,7 +68,7 @@ const DateAndTime = (
                             <Button
                                 variant="outline"
                                 id="date-picker"
-                                className="w-32 justify-between font-normal"
+                                className="w-32 justify-between font-normal border-input"
                             >
                                 {date ? date.toLocaleDateString() : "Select date"}
                                 <ChevronDownIcon />
@@ -86,7 +86,7 @@ const DateAndTime = (
                                     { before: currentDate },
                                     { after: maxDate },
                                 ]}
-                                captionLayout="dropdown"
+                                captionLayout="label"
                                 className="bg-brown-dp-0"
                                 onSelect={(selected) => {
                                     setFieldValue(dateName, selected)
@@ -107,7 +107,8 @@ const DateAndTime = (
                         min="10:00"
                         max="21:30"
                         onChange={handleTimeChange}
-                        className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+                        className="placeholder:text-accent-foreground appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+                        placeholder="Ex.g.: 17:30"
                     />
                     {error && <p className="min-w-min w-full absolute top-full capitalize text-text-accent text-xs">{error}</p>}
                 </div>

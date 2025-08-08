@@ -16,7 +16,7 @@ import type { TBookingParams } from '@/schemas/validationSchemas'
 import { serviceOptions } from '@/data/bookingForm.data'
 import { cn } from '@/lib/utils'
 
-const fieldClass = "text-sm placeholder-accent-foreground/50 border bg-background/50 shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50"
+const fieldClass = "text-sm placeholder-accent-foreground/50 border border-input shadow-xs hover:bg-light/5 hover:text-accent-foreground"
 
 const BookingForm = () => {
     const [ date, setDate ] = useState<Date | undefined>(undefined)
