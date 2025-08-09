@@ -217,6 +217,12 @@ h1, h2, h3, h4, h5, h6 {
   @apply text-pretty max-md:max-w-sm md:max-w-prose;
 }
 
+/* Relocating reCaptcha to the footer */
+/* to not to violate Google's policies */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 /*
   Only used to change footer section.
   Adapts the color scheme based off what schema element was its preceding sibling

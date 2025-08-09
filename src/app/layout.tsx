@@ -1,30 +1,37 @@
-import type { Metadata } from "next";
-import { Work_Sans, Roboto_Mono } from "next/font/google";
-import { Toaster } from "sonner";
-import "./globals.css";
+import type { Metadata } from "next"
+import type { Viewport } from 'next'
+import { Work_Sans, Roboto_Mono } from "next/font/google"
+import { Toaster } from "sonner"
+import "./globals.css"
 
 // variable, subsets
 const workSans = Work_Sans({
   variable: "--font-work-sans",
   subsets: ["latin"],
   display: "swap",
-});
+})
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
   subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
   title: "Unique Touch",
-  description: "Website designed for Unique Touch 4 Wellness massage & therapies",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-};
+  description: "Discover the relaxation with Unique Touch 4 Wellness",
+}
+ 
+export const viewport: Viewport = {
+  width: 'device-width',
+  // maximumScale: 1,
+  minimumScale: 1,
+  initialScale: 1
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -39,5 +46,5 @@ export default function RootLayout({
         />
       </body>
     </html>
-  );
+  )
 }

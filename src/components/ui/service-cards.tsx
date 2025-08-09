@@ -46,7 +46,7 @@ const ServiceCards = () => {
                         <Image
                             src={localImgSrc}
                             alt={`${service}_${desc}`}
-                            className="object-cover max-md:rounded-l-lg max-sm:rounded-r-lg max-sm:rounded-l-none"
+                            className="object-cover md:rounded-lg"
                             fill
                         />
                     </div>

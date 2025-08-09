@@ -45,18 +45,18 @@ const Footer = () => {
                     {/* Contact Us */}
                     <div className="flex flex-col gap-4 h-full">
                         <Heading size="2xl">Contact Us</Heading>
-                        <div className="flex flex-col gap-4 *:flex *:items-center *:flex-row *:gap-2 h-full">
+                        <div className="wrap-break-word flex flex-col gap-4 *:flex *:items-center *:flex-row *:gap-2 h-full">
                             <div>
                                 <Icon icon="Phone" color="text-brown-dp-0 min-h-4 min-w-4 w-4 aspect-square" />
-                                <span className="max-w-36">{ "(123) 456-7890" }</span>
+                                <span className="max-w-36">{ "(647) 302-8529" }</span>
                             </div>
                             <div>
                                 <Icon icon="MailOpen" color="text-brown-dp-0 min-h-4 min-w-4 w-4 aspect-square" />
-                                <span className="max-w-36">{ "hello@ut4w.com" }</span>
+                                <span className="max-w-36">{ "Uniquetouch4wellness@gmail.com" }</span>
                             </div>
                             <div>
                                 <Icon icon="MapPinned" color="text-brown-dp-0 min-h-4 min-w-4 w-4 aspect-square" />
-                                <span className="max-w-36">{ "123 Serenity Lane, Los Angeles, CA" }</span>
+                                <span className="max-w-36">{ "700 Dundas St E, Mississauga, ON L4Y 3Y5" }</span>
                             </div>
                         </div>
                         <SocialMediaLinks />
@@ -67,13 +67,22 @@ const Footer = () => {
             <div className="w-full mx-auto" data-slot="copyright">
                 <Separator orientation="horizontal" />
                 <div className="container mx-auto flex flex-col max-md:text-center md:flex-row justify-between gap-2 md:gap-6 w-full pt-6 pb-10">
-                    <div className="max-md:*:font-medium">
-                        <span className="mr-[1ch]">Copyright © { new Date().getFullYear() }</span>
-                        <span>Unique Touch 4 Wellness</span>
+                    <div className="text-sm">
+                        <p className="max-w-sm">
+                            This site is protected by reCAPTCHA and the Google&nbsp;
+                            <Link href="https://policies.google.com/privacy" className="underline">Privacy Policy</Link>&nbsp;and&nbsp;
+                            <Link href="https://policies.google.com/terms" className="underline">Terms of Service</Link>&nbsp;apply.
+                        </p>
                     </div>
-                    <div>
-                        <Link href="" className="mr-6">Privacy Policy</Link>
-                        <Link href="">Term and conditions</Link>
+                    <div className="max-md:*:font-medium text-sm">
+                        <p>
+                            <span className="mr-[1ch]">Copyright © { new Date().getFullYear() }</span>
+                            <span>Unique Touch 4 Wellness</span>
+                        </p>
+                        <p>
+                            <Link href="">Privacy Policy</Link>
+                            <Link href="" className="ml-2">Terms of Service</Link>
+                        </p>
                     </div>
                 </div>
             </div>
