@@ -56,20 +56,35 @@ const genHTMLBodyResponse = (data: TBookingParams): string => {
 
 export async function POST(req: Request) {
     const slot: TBookingParams = sanitizeStrings(await req.json())
+
+    if (!process.env.RESEND_API_KEY || !process.env.RESEND_SENDER_EMAIL || !process.env.RESEND_RECIEVER_EMAIL) {
+        return NextResponse.json({
+            success: false,
+            errors: "Server misconfiguration: missing environment variables."
+        })
+    }
     
     try {
         const validatedData = await BookingSchema.validate(slot, { abortEarly: false })
 
-        resend.emails.send({
+        const { data, error } = await resend.emails.send({
             from: process.env.RESEND_SENDER_EMAIL!,
-            to: [process.env.RESEND_RECIEVER_EMAIL!],
+            to: process.env.RESEND_RECIEVER_EMAIL!,
             subject: `New Booking from ${validatedData.name}`,
             html: genHTMLBodyResponse(validatedData)
         })
 
+        if (error) {
+            console.log(error)
+            return NextResponse.json({
+                success: false,
+                errors: error
+            })
+        }
+
         return NextResponse.json({
             success: true,
-            bookedData: validatedData
+            data
         })
     }
 

@@ -2,6 +2,7 @@
 
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { useCallback } from 'react'
+import axios from 'axios'
 
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import FormikSelection from '@app-ui/formikSelection'
@@ -30,30 +31,30 @@ const BookingForm = () => {
             if (!executeRecaptcha) return
 
             const token = await executeRecaptcha('form_submit')
-
-            const res = await fetch('/api/verify-captcha', {
-                method: 'POST',
-                body: JSON.stringify({ token }),
-            })
-
-            const data = await res.json()
+            const recaptchaRes = await axios.post('/api/verify-captcha', { token }).then(res => res.data)
             
-            if (data.success && data.score > 0.7) {
-                const res = await fetch('/api/submit-appointment', {
-                    method: "POST",
-                    body: JSON.stringify(values)
-                })
+            if (recaptchaRes.success && recaptchaRes.score > 0.7) {
+                const res = await axios.post('/api/submit-appointment', values).then(res => res.data)
 
-                const data = await res.json()
-                console.log(data)
-                toast("Appointment Made Successfully!", {
-                    description: "We have recieved your booking and will contact you later for confirmation!",
-                    icon: <Icon icon="BadgeCheck" size={28} />,
-                    position: 'top-center',
-                })
+                if (res.success && res.data) {
+                    toast("Appointment Made Successfully!", {
+                        description: "We have recieved your booking and will contact you later for confirmation!",
+                        icon: <Icon icon="BadgeCheck" size={28} />,
+                        position: 'top-center',
+                    })
+                } else {
+                    console.error(res)
+                    toast("We couldn't book you!", {
+                        description: "An error occured, please try again later.",
+                        icon: <Icon icon="BadgeX" size={28} />,
+                        position: 'top-center',
+                    })
+                    return -1
+                }
                 
                 actions.resetForm()
             } else {
+                // ReCaptcha Failed
                 toast("We couldn't book you!", {
                     description: "An error occured, please try again later.",
                     icon: <Icon icon="BadgeX" size={28} />,

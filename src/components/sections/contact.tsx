@@ -2,6 +2,7 @@
 
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { useCallback } from 'react'
+import axios from 'axios'
 
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import { ContactSchema } from '@/schemas/validationSchemas'
@@ -12,7 +13,7 @@ import { toast } from 'sonner'
 
 import type { TContactParams } from '@/schemas/validationSchemas'
 import { cn } from '@/lib/utils'
-import { Icon } from '../ui/Icon'
+import { Icon } from '@app-ui/Icon'
 
 const fieldClass = "lg:text-sm placeholder-accent-foreground/50 border border-input/25 bg-background/50 shadow-xs hover:bg-accent/65"
 
@@ -25,30 +26,20 @@ const ContactForm = () => {
             if (!executeRecaptcha) return
 
             const token = await executeRecaptcha('form_submit')
-
-            const res = await fetch('/api/verify-captcha', {
-                method: 'POST',
-                body: JSON.stringify({ token }),
-            })
-
-            const data = await res.json()
+            const recaptchaRes = await axios.post('/api/verify-captcha', { token }).then(res => res.data)
             
-            if (data.success && data.score > 0.7) {
-                const res = await fetch('/api/submit-question', {
-                    method: 'POST',
-                    body: JSON.stringify(values)
-                })
+            if (recaptchaRes.success && recaptchaRes.score > 0.7) {
+                const res = await axios.post('/api/submit-question', values).then(res => res.data)
 
-                const resData = await res.json()
-                if (resData.success && resData.sentMessage) {
-                    console.log(resData)
+                if (res.success && res.data) {
+                    console.log(res)
                     toast("Message Sent Successfully!", {
                         description: "We have recieved your message and will reply you shortly!",
                         icon: <Icon icon="BadgeCheck" size={28} />,
                         position: 'top-center',
                     })
                 } else {
-                    console.error(resData.errors)
+                    console.error(res)
                     toast("We couldn't deliver your message!", {
                         description: "An error occured while sending, please try again later.",
                         icon: <Icon icon="BadgeX" size={28} />,
@@ -57,7 +48,14 @@ const ContactForm = () => {
                 }
                 
                 actions.resetForm()
-            } else alert('Captcha validation failed. Please try again later.')
+            } else {
+                // ReCaptcha Failed
+                toast("We couldn't book you!", {
+                    description: "An error occured, please try again later.",
+                    icon: <Icon icon="BadgeX" size={28} />,
+                    position: 'top-center',
+                })
+            }
         }, [ executeRecaptcha ]
     )
     

@@ -48,16 +48,24 @@ export async function POST(req: Request) {
     try {
         const validatedMessage = await ContactSchema.validate(message, { abortEarly: false })
 
-        resend.emails.send({
+        const { data, error } = await resend.emails.send({
             from: process.env.RESEND_SENDER_EMAIL!,
-            to: [process.env.RESEND_RECIEVER_EMAIL!],
+            to: process.env.RESEND_RECIEVER_EMAIL!,
             subject: `New Question from ${sanitizeStrings(message).name}`,
             html: genHTMLBodyResponse(validatedMessage)
         })
 
+        if (error) {
+            console.log(error)
+            return NextResponse.json({
+                success: false,
+                errors: error
+            })
+        }
+
         return NextResponse.json({
             success: true,
-            sentMessage: validatedMessage
+            data
         })
     } catch (err) {
         if (err instanceof Yup.ValidationError) {
