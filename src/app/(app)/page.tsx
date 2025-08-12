@@ -1,6 +1,6 @@
 import { Heading } from "@app-ui/heading"
 import { Button } from "@app-comps/ui/button"
-import Image from "next/image"
+import Image from "@next/image"
 import { Icon } from "@app-comps/ui/Icon"
 import Logo from "@app-comps/logo"
 import Tag from "@app-ui/tag"

@@ -1,6 +1,6 @@
 import type { TServiceCard } from "@app-types/services.types"
 import { cn } from "@/lib/utils"
-import Image from "next/image"
+import Image from "@next/image"
 import { Heading } from "@app-ui/heading"
 import { Button } from "./ui/button"
 import Link from "next/link"

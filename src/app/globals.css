@@ -163,6 +163,10 @@ section {
   @apply mt-24 md:mt-32;
 }
 
+.m-section-sm {
+  @apply mt-24;
+}
+
 .section-container {
   @apply mx-4;
   @media only screen and (max-width: 375px) {

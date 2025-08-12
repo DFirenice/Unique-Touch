@@ -5,7 +5,7 @@ import { Heading } from "@app-ui/heading"
 import { Separator } from "@/components/ui/separator"
 import { Icon } from "@/components/ui/Icon"
 import Tag from "@app-ui/tag"
-import Image from "next/image"
+import Image from "@next/image"
 import BookingSection from "@app-comps/sections/booking"
 
 import { ExperienceDataP1, ExperienceDataP2 } from "@/data/services.data"

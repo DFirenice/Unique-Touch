@@ -19,13 +19,15 @@
       }
     ],
     "paths": {
+      "@root/*": ["./*"],
       "@/*": ["./src/*"],
       "@app-types/*": ["./src/types/*"],
       "@app-comps/*": ["./src/components/*"],
       "@app-ui/*": ["./src/components/ui/*"],
-      "@app-utils/*": ["./src/utils/*"]
+      "@app-utils/*": ["./src/utils/*"],
+      "@next/image": ["./src/components/NextImage.tsx"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "scripts/gen-blur.mjsdule.js"],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,5 @@
 import { Heading } from "@app-ui/heading"
-import Image from "next/image"
+import Image from "@next/image"
 
 const serviceCards = [
     {

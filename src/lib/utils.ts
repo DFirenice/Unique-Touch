@@ -6,10 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
+// Converting special chars into HTML codes to avoid XSS
 import { escape } from 'lodash'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// Converting special chars into HTML codes to avoid XSS
 export const sanitizeStrings = <T extends Record<string, any>>(obj: T): T => {
   const sanitized = {} as T
 
@@ -19,4 +19,17 @@ export const sanitizeStrings = <T extends Record<string, any>>(obj: T): T => {
   }
 
   return sanitized
+}
+
+
+// Path formatter
+export const formatPath = (path: string) => {
+  if (path) {
+    return path
+      .split('/')
+      .map(chunk => ((chunk[0]?.toUpperCase() || 'Home') + chunk.slice(1)))
+      .splice(1)
+      .join(' / ')
+  }
+  return null
 }

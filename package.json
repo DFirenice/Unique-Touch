@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 0.0.0.0 -p 3000",
-    "build": "next build",
+    "generate-blurs": "node scripts/gen-blur.mjs",
+    "dev": "npm run generate-blurs && next dev -H 0.0.0.0 -p 3000",
+    "build": "npm run generate-blurs && next build",
     "start": "next start",
-    "lint": "next lint",
-    "ui:add": "npx @chakra-ui/cli snippet add"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.22.0",
@@ -16,6 +16,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@maptiler/sdk": "^3.7.0",
+    "@plaiceholder/next": "^3.0.0",
     "@radix-ui/react-collapsible": "^1.1.11",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-popover": "^1.1.14",
@@ -39,6 +40,7 @@
     "react-google-recaptcha-v3": "^1.11.0",
     "react-icons": "^5.5.0",
     "resend": "^6.0.0",
+    "sharp": "^0.34.3",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "yup": "^1.6.1"

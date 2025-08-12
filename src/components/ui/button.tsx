@@ -18,8 +18,7 @@ const buttonVariants = cva(
         secondary:
           "bg-brown-dp-1 text-secondary-foreground shadow-xs hover:bg-brown-dp-1/80",
         light:
-          // Not properly displaying on some devices
-          "bg-light text-brown-dp-1 shadow-xs hover:bg-brown-dp-1/80 hover:text-secondary-foreground",
+          "bg-light text-brown-dp-1 shadow-xs hover:bg-light/80",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
