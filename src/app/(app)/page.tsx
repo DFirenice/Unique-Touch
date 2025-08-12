@@ -34,7 +34,7 @@ const Home = () => {
           </div>
           <div className="max-md:*:mx-auto space-y-4 *:text-pretty md:pt-4">
             <Icon icon="Sparkle" size={36} color="text-brown-dp-1" className="max-md:mt-6" />
-            <Heading size="3xl" className="text-pretty max-md:text-center">
+            <Heading size="3xl" className="text-pretty max-md:text-center my-6">
               <span className="text-brown-dp-0">Experience True Wellness at</span>
               <span className="text-brown-dp-1">&nbsp;Unique Touch</span>
             </Heading>
@@ -43,7 +43,7 @@ const Home = () => {
               designed to renew your body, mind, and soul. Step into serenity, and let self-care become your lifestyle.
             </p>
             <Link href="/about">
-              <Button className="flex max-md:mx-auto mt-6 mb-12" size="lg" variant="secondary">Get to Know More</Button>
+              <Button className="flex max-md:mx-auto my-8" size="lg" variant="secondary">Get to Know More</Button>
             </Link>
           </div>
         </div>
