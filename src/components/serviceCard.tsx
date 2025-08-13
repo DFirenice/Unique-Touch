@@ -18,7 +18,9 @@ const ServiceCard = ({ data }: TServiceCardProps) => {
             "hover:[&>#panel]:h-full hover:[&>#panel]:justify-center hover:[&>#panel]:backdrop-blur-sm hover:[&>#panel>#content>p]:transition-all",
             "max-md:[&>#panel]:h-full max-md:[&>#panel]:justify-center max-md:[&>#panel]:backdrop-blur-sm"
         )}>
-            <Image src={data.previewUrl} alt={data.title} className="object-cover" fill />
+            <Link href={data.link}>
+                <Image src={data.previewUrl} alt={data.title} className="object-cover" fill />
+            </Link>
             <div className="
                 absolute bottom-0 inset-x-0 h-[35%] bg-black/35 text-layer-dark
                 flex flex-col gap-2 items-center px-2 py-4 overflow-hidden text-center

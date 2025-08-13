@@ -1,8 +1,8 @@
 import { Heading } from "@app-comps/ui/heading"
 import ServiceCard from "@app-comps/serviceCard"
 import { ServicesData } from "@/data/services.data"
-import { Button } from "@/components/ui/button"
 import Subscribe from "@/components/sections/subscribe"
+import Explore from "@app-comps/sections/explore"
 
 const Services = () => {
   return (
@@ -41,29 +41,7 @@ const Services = () => {
             </div>
         </section>
 
-        {/* Ready to Reconnect */}
-        <section className="mt-24 md:px-4 text-layer-dark">
-            <div className="w-full md:container mx-auto">
-                <div className="
-                    flex justify-center items-center flex-col gap-6 min-h-[40vh] overflow-hidden md:rounded-4xl p-6 text-center
-                    bg-[linear-gradient(to_top,rgba(114,91,75,0.87),rgba(114,91,75,0.87)),url('/images/about/towels_on_rack.jpg')] bg-center bg-cover bg-no-repeat
-                ">
-                    <div className="max-md:py-4">
-                        <Heading size="4xl" className="mx-auto">
-                            <span>Ready to</span>
-                            <span className="text-text-accent"> Reconnect </span>
-                            <span>Yourself?</span>
-                        </Heading>
-                        <p className="mx-auto max-w-sm mt-2 max-sm:my-4">Book your favorite treatment or consult our team for a personalized wellness plan made just for you.</p>
-                    </div>
-                    <div className="flex flex-row gap-4">
-                        <Button variant="light">Book Now</Button>
-                        <Button variant="outline">Explore Packages</Button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <Explore />
         <Subscribe variation="light" />
     </>
   )

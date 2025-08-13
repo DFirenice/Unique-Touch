@@ -1,5 +1,6 @@
-import type { TCardContent } from "@/components/card"
-import { TServiceCard } from "@/types/services.types"
+import type { TCardContent } from "@app-comps/card"
+import type { TServiceCard } from "@app-types/services.types"
+import type { TFAQ } from "@app-types/faq.type"
 
 export const ExperienceDataP1: TCardContent[] = [
     {
@@ -100,6 +101,7 @@ export type TServicesContentData = {
         schedule: string    // Ex.: Moday-Saturday, 10am - 7pm
         price: number       // Dollars per session
     }
+    faq: TFAQ[]
 }
 
 export const ServicesContentData: TServicesContentData[] = [
@@ -109,18 +111,9 @@ export const ServicesContentData: TServicesContentData[] = [
         sub: 'Restore your skin’s natural brightness and vitality',
         about: 'Our Radiant Glow Facial is a premium skincare experience designed to deeply cleanse, hydrate, and rejuvenate your complexion. Using high-quality products rich in antioxidants and vitamins, this treatment helps remove impurities, reduce dullness, and leave your skin feeling refreshed and luminous.',
         session: [
-            {
-                title: 'Deep Cleansing & Exfoliation',
-                description: 'We start by thoroughly cleansing the skin to remove makeup, dirt, and excess oils, followed by gentle exfoliation to slough away dead skin cells.'
-            },
-            {
-                title: 'Nourishing Mask',
-                description: 'A rich mask infused with botanical extracts and vitamins is applied to hydrate, soothe, and brighten the skin.'
-            },
-            {
-                title: 'Facial Massage',
-                description: 'Relaxing massage techniques stimulate blood circulation, promote lymphatic drainage, and leave your face looking revitalized.'
-            }
+            { title: 'Deep Cleansing & Exfoliation', description: 'We start by thoroughly cleansing the skin to remove makeup, dirt, and excess oils, followed by gentle exfoliation to slough away dead skin cells.' },
+            { title: 'Nourishing Mask', description: 'A rich mask infused with botanical extracts and vitamins is applied to hydrate, soothe, and brighten the skin.' },
+            { title: 'Facial Massage', description: 'Relaxing massage techniques stimulate blood circulation, promote lymphatic drainage, and leave your face looking revitalized.' }
         ],
         benefits: [
             'Brightens dull skin',
@@ -133,7 +126,12 @@ export const ServicesContentData: TServicesContentData[] = [
             duration: 60,
             schedule: 'Monday–Saturday, 10am – 7pm',
             price: 85
-        }
+        },
+        faq: [
+            { trigger: 'Is the Radiant Glow Facial suitable for sensitive skin?', content: 'Yes, our products are gentle and formulated to be safe for sensitive skin types.' },
+            { trigger: 'How often should I get this facial?', content: 'We recommend every 4–6 weeks to maintain optimal results.' },
+            { trigger: 'Can I wear makeup right after?', content: 'It’s best to let your skin breathe for at least a few hours after the treatment.' }
+        ]
     },
     {
         id: 'aromatherapy-massage',
@@ -141,18 +139,9 @@ export const ServicesContentData: TServicesContentData[] = [
         sub: 'Relax your body and uplift your mind with the power of essential oils',
         about: 'Our Aromatherapy Massage blends gentle massage techniques with pure essential oils, offering a sensory journey that calms the mind, relieves muscle tension, and restores emotional balance. Each oil blend is chosen to match your needs, from stress relief to energy boosting.',
         session: [
-            {
-                title: 'Essential Oil Selection',
-                description: 'Choose from a variety of therapeutic oil blends to match your mood and wellness goals.'
-            },
-            {
-                title: 'Full-Body Massage',
-                description: 'A light to medium pressure massage focuses on relaxation and stress reduction while enhancing circulation.'
-            },
-            {
-                title: 'Mindful Breathing & Relaxation',
-                description: 'Guided breathing helps deepen the effects of the treatment and promote a sense of inner calm.'
-            }
+            { title: 'Essential Oil Selection', description: 'Choose from a variety of therapeutic oil blends to match your mood and wellness goals.' },
+            { title: 'Full-Body Massage', description: 'A light to medium pressure massage focuses on relaxation and stress reduction while enhancing circulation.' },
+            { title: 'Mindful Breathing & Relaxation', description: 'Guided breathing helps deepen the effects of the treatment and promote a sense of inner calm.' }
         ],
         benefits: [
             'Relieves stress and anxiety',
@@ -165,7 +154,12 @@ export const ServicesContentData: TServicesContentData[] = [
             duration: 75,
             schedule: 'Monday–Saturday, 10am – 7pm',
             price: 95
-        }
+        },
+        faq: [
+            { trigger: 'Can I choose more than one essential oil?', content: 'Yes, we can blend oils to tailor the aroma and benefits to your needs.' },
+            { trigger: 'Is this massage safe during pregnancy?', content: 'We offer modified aromatherapy massages for expectant mothers—please inform us when booking.' },
+            { trigger: 'Will the scent linger on my skin?', content: 'A light fragrance may remain for a few hours, depending on the oil blend used.' }
+        ]
     },
     {
         id: 'signature-manicure-pedicure',
@@ -173,18 +167,9 @@ export const ServicesContentData: TServicesContentData[] = [
         sub: 'Luxurious care for hands and feet',
         about: 'Treat yourself to our Signature Manicure & Pedicure — a pampering session that leaves your hands and feet looking and feeling their best. We use nourishing treatments to maintain nail health while enhancing beauty.',
         session: [
-            {
-                title: 'Nail Shaping & Buffing',
-                description: 'Gently shaping and smoothing nails for a clean, polished look.'
-            },
-            {
-                title: 'Cuticle Care',
-                description: 'Hydrating cuticle treatment and precise trimming to promote healthy nail growth.'
-            },
-            {
-                title: 'Polish or Natural Finish',
-                description: 'Choose from a wide range of premium polishes or opt for a buffed natural shine.'
-            }
+            { title: 'Nail Shaping & Buffing', description: 'Gently shaping and smoothing nails for a clean, polished look.' },
+            { title: 'Cuticle Care', description: 'Hydrating cuticle treatment and precise trimming to promote healthy nail growth.' },
+            { title: 'Polish or Natural Finish', description: 'Choose from a wide range of premium polishes or opt for a buffed natural shine.' }
         ],
         benefits: [
             'Improves nail health',
@@ -197,7 +182,12 @@ export const ServicesContentData: TServicesContentData[] = [
             duration: 90,
             schedule: 'Monday–Saturday, 10am – 7pm',
             price: 70
-        }
+        },
+        faq: [
+            { trigger: 'Do you use gel or regular polish?', content: 'We offer both options—please specify your preference when booking.' },
+            { trigger: 'How long will my manicure and pedicure last?', content: 'Typically 1–2 weeks for hands and 3–4 weeks for feet, depending on care.' },
+            { trigger: 'Can I bring my own nail polish?', content: 'Absolutely, we can apply your own polish if you prefer.' }
+        ]
     },
     {
         id: 'detox-body-wrap',
@@ -205,18 +195,9 @@ export const ServicesContentData: TServicesContentData[] = [
         sub: 'Purify and renew from head to toe',
         about: 'Our Detox Body Wrap is designed to cleanse the skin, eliminate toxins, and deeply hydrate. This treatment combines natural clays, seaweed, and herbal infusions to refresh the body and restore energy.',
         session: [
-            {
-                title: 'Body Exfoliation',
-                description: 'Gentle exfoliation removes dead skin cells and prepares the skin for optimal absorption of nutrients.'
-            },
-            {
-                title: 'Nourishing Wrap',
-                description: 'A warm, nutrient-rich wrap envelops the body, drawing out impurities and replenishing moisture.'
-            },
-            {
-                title: 'Hydration Finish',
-                description: 'The session concludes with a moisturizing massage to leave your skin silky smooth.'
-            }
+            { title: 'Body Exfoliation', description: 'Gentle exfoliation removes dead skin cells and prepares the skin for optimal absorption of nutrients.' },
+            { title: 'Nourishing Wrap', description: 'A warm, nutrient-rich wrap envelops the body, drawing out impurities and replenishing moisture.' },
+            { title: 'Hydration Finish', description: 'The session concludes with a moisturizing massage to leave your skin silky smooth.' }
         ],
         benefits: [
             'Draws out toxins',
@@ -229,7 +210,12 @@ export const ServicesContentData: TServicesContentData[] = [
             duration: 75,
             schedule: 'Monday–Saturday, 10am – 7pm',
             price: 110
-        }
+        },
+        faq: [
+            { trigger: 'Will I sweat during the body wrap?', content: 'Yes, mild perspiration is normal and helps release toxins.' },
+            { trigger: 'Is the wrap safe for all skin types?', content: 'Yes, though we recommend a patch test for very sensitive skin.' },
+            { trigger: 'How soon will I feel results?', content: 'Many clients feel refreshed immediately, with skin benefits lasting several days.' }
+        ]
     },
     {
         id: 'hot-stone-therapy',
@@ -237,18 +223,9 @@ export const ServicesContentData: TServicesContentData[] = [
         sub: 'Deep relaxation with the healing warmth of stones',
         about: 'Hot Stone Therapy uses smooth, heated basalt stones to melt away muscle tension and promote a deep state of relaxation. The combination of heat and massage helps improve circulation and calm the nervous system.',
         session: [
-            {
-                title: 'Stone Placement',
-                description: 'Heated stones are placed on specific points to target tension and promote energy flow.'
-            },
-            {
-                title: 'Massage with Stones',
-                description: 'The therapist uses the stones as an extension of their hands for deep muscle relief.'
-            },
-            {
-                title: 'Finishing Stretches',
-                description: 'Gentle stretching completes the session, leaving you feeling light and relaxed.'
-            }
+            { title: 'Stone Placement', description: 'Heated stones are placed on specific points to target tension and promote energy flow.' },
+            { title: 'Massage with Stones', description: 'The therapist uses the stones as an extension of their hands for deep muscle relief.' },
+            { title: 'Finishing Stretches', description: 'Gentle stretching completes the session, leaving you feeling light and relaxed.' }
         ],
         benefits: [
             'Eases muscle stiffness',
@@ -261,7 +238,12 @@ export const ServicesContentData: TServicesContentData[] = [
             duration: 90,
             schedule: 'Monday–Saturday, 10am – 7pm',
             price: 120
-        }
+        },
+        faq: [
+            { trigger: 'Are the stones too hot to touch?', content: 'No, we carefully monitor stone temperature for your comfort and safety.' },
+            { trigger: 'Can this therapy help with chronic pain?', content: 'Yes, the heat and massage combination can relieve muscle tension and discomfort.' },
+            { trigger: 'Do I need to prepare in any way?', content: 'Wear comfortable clothing and stay hydrated before your session.' }
+        ]
     },
     {
         id: 'brow-lash-care',
@@ -269,18 +251,9 @@ export const ServicesContentData: TServicesContentData[] = [
         sub: 'Frame your eyes with perfectly shaped brows and lush lashes',
         about: 'Our Brow & Lash Care service enhances your natural features with professional shaping, tinting, and nourishing treatments. Whether you’re looking for a subtle lift or a bold, defined look, we customize the service to your style.',
         session: [
-            {
-                title: 'Brow Shaping',
-                description: 'Careful sculpting of the eyebrows to match your facial structure and style preference.'
-            },
-            {
-                title: 'Lash Enhancement',
-                description: 'Lash tint or lift for a fuller, more defined appearance without the need for mascara.'
-            },
-            {
-                title: 'Nourishing Serum Application',
-                description: 'A conditioning treatment strengthens and promotes healthy lash and brow growth.'
-            }
+            { title: 'Brow Shaping', description: 'Careful sculpting of the eyebrows to match your facial structure and style preference.' },
+            { title: 'Lash Enhancement', description: 'Lash tint or lift for a fuller, more defined appearance without the need for mascara.' },
+            { title: 'Nourishing Serum Application', description: 'A conditioning treatment strengthens and promotes healthy lash and brow growth.' }
         ],
         benefits: [
             'Enhances facial symmetry',
@@ -293,6 +266,11 @@ export const ServicesContentData: TServicesContentData[] = [
             duration: 45,
             schedule: 'Monday–Saturday, 10am – 7pm',
             price: 55
-        }
+        },
+        faq: [
+            { trigger: 'How long do brow and lash tints last?', content: 'Typically 4–6 weeks, depending on hair growth and care.' },
+            { trigger: 'Is lash lifting safe for my eyes?', content: 'Yes, we use gentle, eye-safe solutions to ensure comfort and safety.' },
+            { trigger: 'Can I wear makeup after the treatment?', content: 'We recommend avoiding eye makeup for 24 hours for best results.' }
+        ]
     }
 ]

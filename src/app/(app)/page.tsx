@@ -159,7 +159,7 @@ const Home = () => {
       <section className="m-section text-center px-4 text-layer-light">
         <div>
           <Tag content="Hot It Works" />
-          <div className="mb-12 *:my-4 *:mx-auto">
+          <div className="mb-16 *:my-4 *:mx-auto">
             <Heading className="text-brown-dp-0 *:not-last:mr-3 *:inline-block" size="4xl">
               <span className="text-brown-dp-1">From booking</span>
               <span>To Glowing</span>

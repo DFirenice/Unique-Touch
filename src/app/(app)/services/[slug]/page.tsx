@@ -6,7 +6,11 @@ import { Heading } from "@app-ui/heading"
 import { ServicesContentData } from "@/data/services.data"
 import { Icon } from "@app-ui/Icon"
 import { Button } from "@app-ui/button"
-import Image from "@root/src/components/NextImage"
+import Image from "@app-comps/NextImage"
+
+import Subscribe from "@app-comps/sections/subscribe"
+import CollapsibleFAQ from "@app-ui/collapsibleFAQ"
+import Explore from "@app-comps/sections/explore"
 
 import {
   Carousel,
@@ -15,7 +19,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@app-ui/carousel"
-import Subscribe from "@root/src/components/sections/subscribe"
 
 const Service = () => {
     // Capitalizing and splitting to suitable format (... / ...)
@@ -45,11 +48,13 @@ const Service = () => {
                     <section className="m-section text-layer-light px-4">
                         <div className="container mx-auto">
                             <div className="text-center my-6 *:mx-auto">
-                                <Heading size="4xl" className="mb-8">{ svData.name }</Heading>
+                                <Heading size="4xl" className="mb-4">{ svData.name }</Heading>
                                 <p>{ svData.sub }</p>
                             </div>
                         </div>
                     </section>
+
+                    {/* About Session */}
                     <section className="mt-16 lg:m-section-sm text-layer-light px-4">
                         <div className="container mx-auto flex flex-col lg:flex-row gap-16 justify-center lg:justify-between [&>div]:mt-6">
                             {/* Session Information */}
@@ -121,8 +126,9 @@ const Service = () => {
                             </div>
                         </div>
                     </section>
+
                     {/* Service Showcases */}
-                    <section className="px-2 mt-16">
+                    <section className="px-2 m-section-sm">
                         <div className="container mx-auto grid grid-cols-3 grid-rows-2 gap-2">
                             { [...Array(6)].map((demo, i) => (
                                 <div className="relative rounded-2xl overflow-hidden aspect-[1/0.75] max-md:aspect-square" key={`${demo}_${i}`}>
@@ -131,9 +137,10 @@ const Service = () => {
                             )) }
                         </div>
                     </section>
+
                     {/* Reviews */}
-                    <section className="m-section-sm text-layer-dark bg-surface-dark px-4">
-                        <div className="container mx-auto py-12 px-4">
+                    <section className="m-section text-layer-dark bg-surface-dark px-4">
+                        <div className="container flex items-center min-h-[60vh] mx-auto py-12 px-4">
                             <Carousel>
                                 <div className="flex gap-x-8 justify-between items-end">
                                     <Heading size="4xl" className="mb-6">
@@ -150,7 +157,7 @@ const Service = () => {
                                     <CarouselContent className="min-h-max">
                                         { [...Array(5)].map((review, i) => (
                                             <CarouselItem
-                                                className="text-layer-light md:basis-1/2 lg:basis-1/3 pl-4"
+                                                className="text-layer-light md:basis-1/2 lg:basis-1/3 pl-4 select-none"
                                                 key={`${review}_${i}`}
                                             >
                                                 <div className="flex flex-col gap-2 justify-between h-full bg-surface-light rounded-lg p-4 pt-6">
@@ -173,6 +180,32 @@ const Service = () => {
                             </Carousel>
                         </div>
                     </section>
+
+                    {/* FAQ */}
+                    <section className="text-layer-light m-section px-4">
+                        <div className="container mx-auto px-4">
+                            <div className="text-center *:mx-auto">
+                                <Heading size="4xl" className="mb-4">
+                                    <span>Need More</span>
+                                    <span className="text-brown-dp-0"> Details?</span>
+                                </Heading>
+                                <p>Browse through our most asked questions to learn more about your service and spa experience.</p>
+                            </div>
+                            <div className="mt-16">
+                                { svData.faq.map(({ trigger, content }, i) => (
+                                    <CollapsibleFAQ
+                                        key={trigger}
+                                        trigger={trigger}
+                                        content={content}
+                                        open={i < 3}
+                                        variant="light"
+                                    />
+                                )) }
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <Explore />
                     <Subscribe variation="light" />
                 </>
             ) : null }

@@ -52,3 +52,5 @@ try {
   await genMapping()
 
 } catch (err) { console.error('Error creating directory or mapping: ', err) }
+
+console.log('')

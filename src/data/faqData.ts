@@ -1,4 +1,6 @@
-export const faqData = [
+import type { TFAQ } from "@app-types/faq.type"
+
+export const faqData: TFAQ[] = [
     {
         trigger: 'How Do I Book?',
         content: 'You can easily book online or by calling our front desk. Walk-ins are accepted when available.',
