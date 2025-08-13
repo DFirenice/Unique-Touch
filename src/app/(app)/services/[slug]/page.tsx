@@ -22,7 +22,7 @@ import {
 
 const Service = () => {
     // Capitalizing and splitting to suitable format (... / ...)
-    const formattedPath = formatPath(usePathname())
+    const formattedPath = formatPath(usePathname())?.toString()
     const svData = ServicesContentData.find(sv => sv.id === formattedPath?.split(' / ').at(-1)?.toLowerCase())
     
     return (
@@ -33,9 +33,9 @@ const Service = () => {
                         <span>Discover the Treatments</span><br />
                         <span className="text-text-accent">That Restore Balance</span>
                     </Heading>
-                    <div className="text-base font-medium text-text-accent *:last-of-type:text-light">
-                        { formattedPath?.split('　').map(chunk => (
-                            <span className={cn({ "text-brown-dp-0": chunk === '/' })} key={formattedPath + chunk}>
+                    <div className="text-base font-medium text-text-accent [&>span]:last-of-type:text-light">
+                        { formattedPath?.split(' ').map(chunk => (
+                            <span className={cn({ "text-light mx-1.5": chunk === '/'})} key={formattedPath + chunk}>
                                 { chunk.replaceAll('-', ' ') }
                             </span>
                         )) }

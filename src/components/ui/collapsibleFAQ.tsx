@@ -28,6 +28,7 @@ const variants = {
         containerStyles: "",
         triggerStyles: {
             container: "",
+            heading: () => "my-4",
             iconColor: "text-brown-dp-1"
         },
         contentStyles: {
@@ -39,6 +40,7 @@ const variants = {
         containerStyles: "text-brown-dp-0 bg-surface-accent rounded-2xl my-4",
         triggerStyles: {
             container: "py-2 px-6",
+            heading: (isOpen: boolean) => isOpen ? "mt-4 mb-0" : "my-4",
             iconColor: "text-brown-dp-0"
         },
         contentStyles: {
@@ -57,7 +59,7 @@ const CollapsibleFAQ = ({ trigger, content, open = false, variant = "transparent
             className={cn(variants[variant].containerStyles)}
         >
             <CollapsibleTrigger className={cn(baseProperties, variants[variant].triggerStyles.container)}>
-                <Heading className={isOpen ? "mt-4 mb-0" : "my-4"} size="2xl">{ trigger }</Heading>
+                <Heading className={cn(variants[variant].triggerStyles.heading(isOpen))} size="2xl">{ trigger }</Heading>
                 <Icon
                     color={cn(variants[variant].triggerStyles.iconColor)}
                     icon={isOpen ? 'ChevronUp' : 'ChevronDown'}

@@ -25,8 +25,7 @@ export const sanitizeStrings = <T extends Record<string, any>>(obj: T): T => {
 // Path formatter
 export const formatPath = (path: string) => {
   if (path) {
-    return path
-      .split('/')
+    return path.split('/')
       .map(chunk => ((chunk[0]?.toUpperCase() || 'Home') + chunk.slice(1)))
       .splice(1)
       .join(' / ')
