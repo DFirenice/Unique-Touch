@@ -5,6 +5,9 @@ import { getPlaiceholder } from 'plaiceholder'
 const imagesDir = path.join(process.cwd(), 'public/images')
 const blurMap = {}
 
+const mappingName = 'img-blur.map.json'
+const mappingsDirName = 'mappings'
+
 async function walk(dir) {
   const entries = fs.readdirSync(dir)
 
@@ -31,5 +34,21 @@ async function walk(dir) {
 
 await walk(imagesDir)
 
-fs.writeFileSync('mappings/img-blur.map.json', JSON.stringify(blurMap, null, 2))
-console.log(`✓ Generated blur-map.json with ${Object.keys(blurMap).length} entries`)
+// Map generator
+async function genMapping() {
+  fs.writeFileSync(`${mappingsDirName}/${mappingName}`, JSON.stringify(blurMap, null, 2))
+  console.log(`✓ Generated \`${mappingName}\` with ${Object.keys(blurMap).length} entries`)
+}
+
+// Checking for the `mappings` folder
+try {
+  if (!fs.existsSync(mappingsDirName)) {
+    fs.mkdirSync(mappingsDirName, { recursive: true }, (err) => {
+      if (err) throw new Error(err)
+    })
+    console.log(`✓ Created new \`${mappingsDirName}\` directory`)
+  }
+
+  await genMapping()
+
+} catch (err) { console.error('Error creating directory or mapping: ', err) }
