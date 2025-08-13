@@ -8,29 +8,29 @@ import SocialMediaLinks from "@app-comps/socialMediaLinks"
 const Footer = () => {
     return (
         <section className="adaptable-footer text-layer-light px-4 pt-16">
-            <div className="container mx-auto max-md:px-4 flex flex-col md:flex-row gap-12 justify-between w-full py-12">
+            <div className="container mx-auto max-md:px-4 flex flex-col md:flex-row gap-12 justify-between w-full max-md:pt-0 py-12">
                 {/* Logo */}
                 <div className="flex flex-col md:gap-6 min-w-max">
-                    <div className="flex flex-row gap-4 items-center max-md:hidden">
+                    <div className="flex flex-row gap-4 items-center mb-6 max-md:hidden">
                         <div className="relative max-w-16 max-h-16 w-16 h-16 aspect-square">
                             <Logo />
                         </div>
                         <Heading size="4xl" className="font-mono">Unique Touch</Heading>
                     </div>
-                    <div className="max-md:text-center *:max-md:mx-auto">
-                        <Heading size="xl" className="md:mb-4">Working Hours</Heading>
-                        <Heading size="lg" className="text-brown-dp-0 text-wrap break-words max-sm:max-w-48">
+                    <div>
+                        <Heading size="3xl" className="mb-4">Working Hours</Heading>
+                        <Heading size="lg" className="text-brown-dp-0 text-wrap break-words">
                             <span>Monday - Saturday : </span>
                             <span className="font-normal">9.00am - 8.00pm</span>
                         </Heading>
-                        <Heading size="lg" className="text-brown-dp-0">
+                        <Heading size="lg" className="mt-2 text-brown-dp-0">
                             <span>Sunday : </span>
                             <span className="font-normal">Closed</span>
                         </Heading>
                     </div>
                 </div>
                 {/* Links */}
-                <div className="flex flex-row justify-center *:flex *:flex-col gap-4 sm:gap-10">
+                <div className="flex flex-row justify-between *:flex *:flex-col gap-4 sm:gap-10">
                     {/* Menu */}
                     <div className="md:justify-self-center flex flex-col gap-4 h-full max-md:min-w-1/2">
                         <Heading size="2xl">Menu</Heading>
@@ -67,14 +67,14 @@ const Footer = () => {
             <div className="w-full mx-auto" data-slot="copyright">
                 <Separator orientation="horizontal" />
                 <div className="container mx-auto flex flex-col max-md:text-center md:flex-row justify-between gap-2 md:gap-6 w-full pt-6 pb-10">
-                    <div className="text-sm">
+                    <div className="text-sm max-md:*:mx-auto">
                         <p className="max-w-sm">
                             This site is protected by reCAPTCHA and the Google&nbsp;
                             <Link href="https://policies.google.com/privacy" className="underline">Privacy Policy</Link>&nbsp;and&nbsp;
                             <Link href="https://policies.google.com/terms" className="underline">Terms of Service</Link>&nbsp;apply.
                         </p>
                     </div>
-                    <div className="max-md:*:font-medium text-sm">
+                    <div className="max-md:*:font-medium text-sm max-md:*:mx-auto">
                         <p>
                             <span className="mr-[1ch]">Copyright © { new Date().getFullYear() }</span>
                             <span>Unique Touch 4 Wellness</span>

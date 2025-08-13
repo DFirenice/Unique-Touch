@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@root/*": ["./*"],
+      "@mappings/*": ["./mappings/*"],
       "@/*": ["./src/*"],
       "@app-types/*": ["./src/types/*"],
       "@app-comps/*": ["./src/components/*"],

@@ -20,6 +20,10 @@
 # production
 /build
 
+# optimization mappings
+## Gens before dev and build automatically
+/mappings/*.map.json
+
 # misc
 .DS_Store
 *.pem

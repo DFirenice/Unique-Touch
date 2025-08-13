@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { cn } from "@/lib/utils"
 import Image, { ImageProps } from "next/image"
-import blurMap from '@root/blur-map.json'
+import blurMap from '@mappings/img-blur.map.json'
 
 const NextImage = (props: ImageProps) => {
     if (!props.src) return null

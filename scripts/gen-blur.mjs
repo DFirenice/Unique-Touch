@@ -31,5 +31,5 @@ async function walk(dir) {
 
 await walk(imagesDir)
 
-fs.writeFileSync('blur-map.json', JSON.stringify(blurMap, null, 2))
+fs.writeFileSync('mappings/img-blur.map.json', JSON.stringify(blurMap, null, 2))
 console.log(`✓ Generated blur-map.json with ${Object.keys(blurMap).length} entries`)
