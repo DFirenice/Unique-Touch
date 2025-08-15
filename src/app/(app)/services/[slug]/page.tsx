@@ -122,7 +122,7 @@ const Service = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <BookNow variant="light" className="rounded-2xl mt-6" />
+                                <BookNow variant="light" className="rounded-2xl mt-6 w-full" />
                             </div>
                         </div>
                     </section>
