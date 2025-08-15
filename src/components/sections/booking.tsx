@@ -21,14 +21,24 @@ import { Icon } from '@app-ui/Icon'
 
 const fieldClass = "lg:text-sm placeholder-accent-foreground/50 border border-input shadow-xs hover:bg-light/5 hover:text-accent-foreground"
 
+// CAPTCHA or Backend Error
+const invokeErrorToast = () => {
+    toast("We couldn't book you!", {
+        description: "An error occured, please try again later.",
+        icon: <Icon icon="BadgeX" size={28} />,
+        position: 'top-center',
+    })
+}
+
 const BookingForm = () => {
     const [ date, setDate ] = useState<Date | undefined>(undefined)
+    const [ bookingComplete, setBookingComplete ] = useState<boolean>(false)
     const { executeRecaptcha } = useGoogleReCaptcha()
 
     const handleSubmit = useCallback(
         async (values: TBookingParams, actions: FormikHelpers<TBookingParams>) => {
             // Captcha is not yet ready
-            if (!executeRecaptcha) return
+            if (!executeRecaptcha) return invokeErrorToast()
 
             const token = await executeRecaptcha('form_submit')
             const recaptchaRes = await axios.post('/api/verify-captcha', { token }).then(res => res.data)
@@ -44,22 +54,19 @@ const BookingForm = () => {
                     })
                 } else {
                     console.error(res)
-                    toast("We couldn't book you!", {
-                        description: "An error occured, please try again later.",
-                        icon: <Icon icon="BadgeX" size={28} />,
-                        position: 'top-center',
-                    })
+                    invokeErrorToast()
                     return -1
                 }
                 
+                setBookingComplete(true)
                 actions.resetForm()
+                // Displaying successfull booking via button
+                setTimeout(() => {
+                    setBookingComplete(false)
+                }, 5000)
             } else {
                 // ReCaptcha Failed
-                toast("We couldn't book you!", {
-                    description: "An error occured, please try again later.",
-                    icon: <Icon icon="BadgeX" size={28} />,
-                    position: 'top-center',
-                })
+                invokeErrorToast()
             }
         }, [ executeRecaptcha ]
     )
@@ -105,8 +112,8 @@ const BookingForm = () => {
                                     <Field className={cn("px-3 py-2 rounded-lg", fieldClass)} name="note" type="text" placeholder="Your note (Optional)" />
                                     <ErrorMessage className="absolute capitalize text-text-accent text-xs" name="note" component="div" />
                                 </div>
-                                <Button className="inline-flex md:w-min mt-8 w-full" type="submit" disabled={isSubmitting}>
-                                    {isSubmitting ? 'Booking...' : 'Book now'}
+                                <Button variant="light" className="inline-flex md:w-min mt-8 w-full" type="submit" disabled={isSubmitting}>
+                                    { bookingComplete ? "Booked!" : (isSubmitting ? 'Booking...' : 'Submit Booking') }
                                 </Button>
                             </Form>
                         )}

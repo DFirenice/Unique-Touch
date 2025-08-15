@@ -88,6 +88,7 @@ const Contact = () => {
         <Map />
       </section>
 
+      {/* FAQ */}
       <section className="mx-4 m-section">
         <div className="px-4 text-layer-light w-full container mx-auto flex flex-col max-lg:gap-y-12 gap-8 lg:flex-row justify-center lg:justify-around">
           <div className="max-lg:text-center px-4">

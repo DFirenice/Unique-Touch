@@ -1,5 +1,6 @@
 import { Heading } from "@app-ui/heading"
 import { Button } from "@app-ui/button"
+import BookNow from "@app-ui/book-now"
 
 const Explore = () => {
     return (
@@ -18,7 +19,7 @@ const Explore = () => {
                         <p className="mx-auto max-w-sm mt-2 max-sm:my-4">Book your favorite treatment or consult our team for a personalized wellness plan made just for you.</p>
                     </div>
                     <div className="flex flex-row gap-4">
-                        <Button variant="light">Book Now</Button>
+                        <BookNow variant="light" />
                         <Button variant="outline">Explore Packages</Button>
                     </div>
                 </div>

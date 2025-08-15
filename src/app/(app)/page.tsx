@@ -60,7 +60,7 @@ const Home = () => {
               <span>Repeat.</span>
             </Heading>
             <p className="text-brown-dp-1 mx-auto max-md:max-w-sm max-w-prose px-4">
-              From skincare rituals to full-body therapies, our services are tailored to meet your beauty and wellness goals.
+              From skincare rituals to full-body therapies, <Link href="/services" className="underline decoration-brown-dp-1">our services</Link> are tailored to meet your beauty and wellness goals.
             </p>
           </div>
           <ServiceCards />

@@ -24,11 +24,13 @@ export const sanitizeStrings = <T extends Record<string, any>>(obj: T): T => {
 
 // Path formatter
 export const formatPath = (path: string) => {
+  console.log(path)
   if (path) {
-    return path.split('/')
-      .map(chunk => ((chunk[0]?.toUpperCase() || 'Home') + chunk.slice(1)))
+    const updPath = path.split('/')
+      .map(chunk => (chunk[0]?.toUpperCase()) + chunk.slice(1))
       .splice(1)
-      .join(' / ')
+    updPath.unshift('Home')
+    return updPath.join(' / ')
   }
   return null
 }

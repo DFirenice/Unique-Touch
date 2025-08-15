@@ -1,8 +1,8 @@
 import type { TPackage } from "@/data/arrangments.data"
-import { Button } from "@app-ui/button"
 import { Heading } from "@app-ui/heading"
 import { Icon } from "@app-ui/Icon"
 import { cn } from "@/lib/utils"
+import BookNow from "@app-ui/book-now"
 
 const Package = ({ data, dark = false }: { data: TPackage, dark: boolean }) => {
     return (
@@ -10,7 +10,7 @@ const Package = ({ data, dark = false }: { data: TPackage, dark: boolean }) => {
             { "text-layer-dark bg-brown-dp-1": dark },
             { "text-layer-light bg-surface-accent": dark === false },
             "rounded-2xl text-left px-8 py-12 min-w-76 max-w-76 md:min-w-96 md:max-w-96 w-full",
-            "flex flex-col gap-4"
+            "flex flex-col justify-between gap-4"
         )}>
             <div className="flex flex-col gap-8">
                 <Heading size="4xl" className={
@@ -44,9 +44,7 @@ const Package = ({ data, dark = false }: { data: TPackage, dark: boolean }) => {
                     )) }
                 </div>
             </div>
-            <Button variant={dark ? "default" : "secondary"} className="mt-auto w-min rounded-full px-8 py-6">
-                Book Now
-            </Button>
+            <BookNow variant={dark ? "default" : "secondary"} className="mt-auto w-min rounded-full px-8 py-6" />
         </div>
     )
 }

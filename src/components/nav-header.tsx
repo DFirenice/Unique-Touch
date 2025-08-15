@@ -1,8 +1,8 @@
 'use client'
 
 import { Heading } from "@app-ui/heading"
-import { Button } from "@app-ui/button"
 import { Icon } from "@app-ui/Icon"
+import BookNow from "@app-ui/book-now"
 import Logo from "@app-comps/logo"
 import Link from "next/link"
 
@@ -97,7 +97,7 @@ const NavHeader = () => {
                 </div>
                 <div>
                     <Icon icon={dropdownOpen ? "CircleX" : "AlignJustify" } size={28} className="lg:hidden drop-shadow-xs drop-shadow-black/50" onClick={handleDropdown} />
-                    <Button variant="light" className="max-lg:hidden" size="lg">Book Now</Button>
+                    <BookNow variant="light" className="max-lg:hidden" size="lg" />
                 </div>
             </header>
             { renderDropdown() }

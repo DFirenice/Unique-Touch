@@ -5,8 +5,8 @@ import { cn, formatPath } from "@/lib/utils"
 import { Heading } from "@app-ui/heading"
 import { ServicesContentData } from "@/data/services.data"
 import { Icon } from "@app-ui/Icon"
-import { Button } from "@app-ui/button"
 import Image from "@app-comps/NextImage"
+import BookNow from "@app-ui/book-now"
 
 import Subscribe from "@app-comps/sections/subscribe"
 import CollapsibleFAQ from "@app-ui/collapsibleFAQ"
@@ -22,7 +22,7 @@ import {
 
 const Service = () => {
     // Capitalizing and splitting to suitable format (... / ...)
-    const formattedPath = formatPath(usePathname())?.toString()
+    const formattedPath = formatPath(usePathname())
     const svData = ServicesContentData.find(sv => sv.id === formattedPath?.split(' / ').at(-1)?.toLowerCase())
     
     return (
@@ -34,8 +34,8 @@ const Service = () => {
                         <span className="text-text-accent">That Restore Balance</span>
                     </Heading>
                     <div className="text-base font-medium text-text-accent [&>span]:last-of-type:text-light">
-                        { formattedPath?.split(' ').map(chunk => (
-                            <span className={cn({ "text-light mx-1.5": chunk === '/'})} key={formattedPath + chunk}>
+                        { formattedPath?.split(' ').map((chunk, i) => (
+                            <span className={cn({ "text-light mx-1.5": chunk === '/'})} key={formattedPath + chunk + i}>
                                 { chunk.replaceAll('-', ' ') }
                             </span>
                         )) }
@@ -122,12 +122,12 @@ const Service = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <Button variant="light" className="rounded-2xl mt-6">Book now</Button>
+                                <BookNow variant="light" className="rounded-2xl mt-6" />
                             </div>
                         </div>
                     </section>
 
-                    {/* Service Showcases */}
+                    {/* Service Showcases (images preview) */}
                     <section className="px-2 m-section-sm">
                         <div className="container mx-auto grid grid-cols-3 grid-rows-2 gap-2">
                             { [...Array(6)].map((demo, i) => (
@@ -157,7 +157,7 @@ const Service = () => {
                                     <CarouselContent className="min-h-max">
                                         { [...Array(5)].map((review, i) => (
                                             <CarouselItem
-                                                className="text-layer-light md:basis-1/2 lg:basis-1/3 pl-4 select-none"
+                                                className="text-layer-light basis-1/3 pl-4 select-none"
                                                 key={`${review}_${i}`}
                                             >
                                                 <div className="flex flex-col gap-2 justify-between h-full bg-surface-light rounded-lg p-4 pt-6">
