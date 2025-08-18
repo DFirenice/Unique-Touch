@@ -60,7 +60,7 @@ const ContactForm = () => {
     )
     
     return (
-        <section className="my-12 text-layer-light px-4">
+        <section  data-aos="fade-up" className="my-12 text-layer-light px-4">
             <div className="container bg-surface-light flex items-center gap-y-4 flex-col md:flex-row w-full m-auto rounded-xl overflow-hidden min-h-[50vh] h-full">
                 <div className="relative w-full min-h-[30vh] md:w-2/5 md:h-full md:min-h-[75vh]">
                     <Image src="/images/about/spa-massage-oils-flowers-tray.jpg" alt="Book now" fill className="object-cover" />

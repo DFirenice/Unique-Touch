@@ -72,7 +72,7 @@ const BookingForm = () => {
     )
 
     return (
-        <section className="m-section text-layer-dark px-4">
+        <section  data-aos="fade-up" className="m-section text-layer-dark px-4">
             <div className="container bg-brown-dp-1 flex items-center gap-4 flex-col md:flex-row w-full m-auto rounded-xl overflow-hidden min-h-[50vh] h-full">
                 <div className="relative w-full min-h-[30vh] md:w-2/5 md:h-full md:min-h-[80vh]">
                     <Image src="/images/about/towels_on_rack.jpg" alt="Book now" fill className="object-cover" />

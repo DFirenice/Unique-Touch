@@ -45,7 +45,7 @@ const Service = () => {
             {/* Intro, title */}
             { svData ? (
                 <>
-                    <section className="m-section text-layer-light px-4">
+                    <section  data-aos="fade-up" className="m-section text-layer-light px-4">
                         <div className="container mx-auto">
                             <div className="text-center my-6 *:mx-auto">
                                 <Heading size="4xl" className="mb-4">{ svData.name }</Heading>
@@ -55,7 +55,7 @@ const Service = () => {
                     </section>
 
                     {/* About Session */}
-                    <section className="mt-16 lg:m-section-sm text-layer-light px-4">
+                    <section data-aos="fade-up" className="mt-16 lg:m-section-sm text-layer-light px-4">
                         <div className="container mx-auto flex flex-col lg:flex-row gap-16 justify-center lg:justify-between [&>div]:mt-6">
                             {/* Session Information */}
                             <div className="max-lg:text-center px-4">
@@ -128,7 +128,7 @@ const Service = () => {
                     </section>
 
                     {/* Service Showcases (images preview) */}
-                    <section className="px-2 m-section-sm">
+                    <section data-aos="fade-up" className="px-2 m-section-sm">
                         <div className="container mx-auto grid grid-cols-3 grid-rows-2 gap-2">
                             { [...Array(6)].map((demo, i) => (
                                 <div className="relative rounded-2xl overflow-hidden aspect-[1/0.75] max-md:aspect-square" key={`${demo}_${i}`}>
@@ -139,7 +139,7 @@ const Service = () => {
                     </section>
 
                     {/* Reviews */}
-                    <section className="m-section text-layer-dark bg-surface-dark px-4">
+                    <section data-aos="fade-up" className="m-section text-layer-dark bg-surface-dark px-4">
                         <div className="container flex items-center min-h-[60vh] mx-auto py-12 px-4">
                             <Carousel>
                                 <div className="flex gap-x-8 justify-between items-end">
@@ -182,7 +182,7 @@ const Service = () => {
                     </section>
 
                     {/* FAQ */}
-                    <section className="text-layer-light m-section px-4">
+                    <section data-aos="fade-up" className="text-layer-light m-section px-4">
                         <div className="container mx-auto px-4">
                             <div className="text-center *:mx-auto">
                                 <Heading size="4xl" className="mb-4">

@@ -1,3 +1,4 @@
+import AOSInitializer from "@app-comps/AOSInitializer"
 import type { Metadata } from "next"
 import type { Viewport } from 'next'
 import { Work_Sans, Roboto_Mono } from "next/font/google"
@@ -44,6 +45,7 @@ export default function RootLayout({
           position="top-center"
           duration={6500}
         />
+        <AOSInitializer />
       </body>
     </html>
   )

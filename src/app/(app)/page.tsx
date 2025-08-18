@@ -23,7 +23,7 @@ const Home = () => {
       <Hero />
 
       {/* Get to know more */}
-      <section className="max-h-min h-screen section-container">
+      <section className="max-h-min h-screen section-container" data-aos="fade-up">
         <div className="
           bg-surface-light min-h-min overflow-hidden md:container md:mx-auto rounded-lg
           flex flex-col items-center gap-6 md:gap-12 md:flex-row -translate-y-12
@@ -50,7 +50,7 @@ const Home = () => {
       </section>
       
       {/* Services */}
-      <section id="services" className="md:px-4 container w-full justify-self-center min-h-[85dvh] max-md:min-h-screen flex items-center justify-center text-center">
+      <section id="services" className="md:px-4 container w-full justify-self-center min-h-[85dvh] max-md:min-h-screen flex items-center justify-center text-center" data-aos="fade-up">
         <div className="w-full max-md:my-12 min-lg:my-12">
           <Tag content="Services" />
           <div className="mb-12 *:my-4 *:mx-auto">
@@ -68,7 +68,7 @@ const Home = () => {
       </section>
 
       {/* Values & Experience, service continuation */}
-      <section className="mt-16 w-full container flex flex-col mx-auto text-center">
+      <section className="mt-16 w-full container flex flex-col mx-auto text-center" data-aos="fade-up">
         <div className="flex flex-col gap-4  *:[span,p,h2]:text-brown-dp-1 items-center">
           <Heading size="4xl" aria-level={2} className="*:not-last:mr-3">
             <span>Our Values,</span>
@@ -105,7 +105,7 @@ const Home = () => {
       </section>
 
       {/* Statistics */}
-      <section className="md:mx-4 max-md:min-h-[50dvh] text-layer-light px-4 m-section">
+      <section className="md:mx-4 max-md:min-h-[50dvh] text-layer-light px-4 m-section" data-aos="fade-up">
         <div className="container mx-auto flex md:flex-row flex-col gap-4 justify-center">
           <div className="*:my-4 w-full max-md:text-center max-md:*:mx-auto">
             <Heading size="4xl" className="flex flex-col">
@@ -144,7 +144,7 @@ const Home = () => {
       <section className="
         m-section px-4 py-12 min-h-[75vh] flex flex-col items-center justify-center gap-16 text-center
         bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75vh] bg-center bg-brown-dp-1
-      ">
+      " data-aos="fade-up">
         <div className="flex flex-col justify-center gap-4">
           <div className="relative w-12 h-12 mx-auto"><Logo /></div>
           <Heading size="3xl">Voices of <span className="text-text-accent">Wellness</span></Heading>
@@ -156,7 +156,7 @@ const Home = () => {
       </section>
 
       {/* Hot it works */}
-      <section className="m-section text-center px-4 text-layer-light">
+      <section className="m-section text-center px-4 text-layer-light" data-aos="fade-up">
         <div>
           <Tag content="Hot It Works" />
           <div className="mb-16 *:my-4 *:mx-auto">
@@ -184,7 +184,7 @@ const Home = () => {
       </section>
 
       {/* Packages */}
-      <section className="px-4 m-section text-layer-light text-center" id="packages">
+      <section className="px-4 m-section text-layer-light text-center" id="packages" data-aos="fade-up">
         <div className="w-full mx-auto xl:container">
           <div className="*:my-4 w-full text-center flex items-center flex-col">
             <Heading size="4xl" className="flex flex-col text-brown-dp-0">

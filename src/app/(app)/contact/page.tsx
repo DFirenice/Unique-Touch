@@ -27,7 +27,7 @@ const Contact = () => {
             </div>
         </section>
     
-      <section className="m-section px-4">
+      <section data-aos="fade-up" className="m-section px-4">
         <div className="w-full text-layer-light container mx-auto">
           <div className="flex justify-between items-center lg:items-end flex-col gap-4 max-lg:text-center lg:flex-row">
             <Heading size="4xl" className="capitalize flex flex-col">
@@ -42,7 +42,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="mt-32 px-4">
+      <section data-aos="fade-up" className="mt-32 px-4">
         <div className="w-full text-layer-light container mx-auto">
           <div className="flex max-sm:*:min-w-[40vw] *:flex-1 *:basis-0 flex-wrap flex-row justify-center gap-y-12 gap-4 md:gap-x-6 max-sm:text-xs max-md:text-sm">
             {/* Contact Card */}
@@ -84,12 +84,12 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="w-full my-24">
+      <section data-aos="fade-up" className="w-full my-24">
         <Map />
       </section>
 
       {/* FAQ */}
-      <section className="mx-4 m-section">
+      <section data-aos="fade-up" className="mx-4 m-section">
         <div className="px-4 text-layer-light w-full container mx-auto flex flex-col max-lg:gap-y-12 gap-8 lg:flex-row justify-center lg:justify-around">
           <div className="max-lg:text-center px-4">
             <Heading size="4xl">

@@ -4,7 +4,7 @@ import BookNow from "@app-ui/book-now"
 
 const Explore = () => {
     return (
-         <section className="mt-24 md:px-4 text-layer-dark">
+         <section  data-aos="fade-up" className="mt-24 md:px-4 text-layer-dark">
             <div className="w-full md:container mx-auto">
                 <div className="
                     flex justify-center items-center flex-col gap-6 min-h-[40vh] overflow-hidden md:rounded-4xl p-6 text-center

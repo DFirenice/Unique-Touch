@@ -21,7 +21,7 @@ const Services = () => {
         </section>
 
         {/* Service tiles */}
-        <section className="px-4 m-section text-layer-light">
+        <section data-aos="fade-up" className="px-4 m-section text-layer-light">
             <div className="w-full container mx-auto">
                 <div className="flex justify-between items-center lg:items-end flex-col gap-4 max-lg:text-center lg:flex-row">
                     <Heading className="text-brown-dp-0 *:not-last:mr-3 *:inline-block" size="4xl">
@@ -33,7 +33,7 @@ const Services = () => {
                 </div>
                 <div className="mt-16 flex flex-row flex-wrap justify-between gap-4 *:basis-1/4 *:shrink *:grow">
                     { ServicesData.map((card, i) => (
-                        <div key={"service_card" + i} className="*:mx-auto">
+                        <div key={"service_card" + i} className="*:mx-auto" data-aos="fade-up" data-aos-delay={50 * i} >
                             <ServiceCard data={card} />
                         </div>
                     )) }

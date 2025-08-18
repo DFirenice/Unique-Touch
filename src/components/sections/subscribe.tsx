@@ -12,7 +12,7 @@ const Subscribe = ({ variation = "dark" }: TColorVariationProps) => {
             "bg-[url('/images/pattern.svg')] bg-repeat bg-[length:75vh] bg-center bg-brown-dp-1",
             "text-layer-dark text-pretty max-md:text-center",
             { "bg-light text-layer-light bg-[linear-gradient(to_top,rgba(255,252,251,0.9)_0%,rgba(255,252,251,1)_175%),url('/images/pattern.svg')]": isLight },
-        )}>
+        )} data-aos="fade-up">
             <div className={cn(
                 "mx-auto container flex flex-col md:flex-row justify-around items-center gap-4",
                 { "pb-8": isLight }

@@ -27,7 +27,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            <section className="mt-28 max-md:min-h-[50vh] text-layer-light w-full">
+            <section data-aos="fade-up" className="mt-28 max-md:min-h-[50vh] text-layer-light w-full">
                 <div className="container px-4 flex h-full flex-col justify-center mx-auto">
                     <div className="w-full flex max-md:text-center md:justify-between items-center md:items-end flex-col md:flex-row gap-4">
                         <div className="max-md:mx-auto inline-flex my-2 md:hidden">
@@ -61,7 +61,7 @@ const AboutPage = () => {
                 </div>
             </section>
             
-            <section className="m-section text-layer-light text-center px-4">
+            <section data-aos="fade-up" className="m-section text-layer-light text-center px-4">
                 <div className="w-full">
                     <div className="*:max-w-4xl overflow-hidden">
                         <Heading size="4xl" className="mx-auto">
@@ -81,7 +81,7 @@ const AboutPage = () => {
             </section>
 
             {/* Our values */}
-            <section className="m-section bg-surface-dark text-layer-dark px-4">
+            <section data-aos="fade-up" className="m-section bg-surface-dark text-layer-dark px-4">
                 <div className="py-24 mx-auto container w-full flex justify-around flex-col gap-y-14 gap-x-8 max-md:text-center max-md:*:mx-auto md:flex-row">
                     <div>
                         <Heading className="flex flex-col" size="4xl">
