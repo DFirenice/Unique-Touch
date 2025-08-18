@@ -43,7 +43,7 @@ export default function Map() {
     // Hard-coded point near Mississauga
     const locationPoint = [-79.59919513349892, 43.59457393948794] as maptilersdk.LngLatLike // slightly NW
     const popup = new Popup({ offset: 25 }).setHTML(
-      `<h3 class="text-brown-dp-0 font-bold text-xl z-[9]">UT 4 Wellness</h3><p class="text-brown-dp-1">Unique Touch for Wellness Location</p>`
+      `<h3 class="text-brown-dp-0 px-2 font-bold text-xl z-[9]">UT 4 Wellness</h3><a href="https://www.google.com/maps/place/UT4Wellness/@43.5941405,-79.5984465,16z/data=!4m2!3m1!1s0x0:0x35a07fbd90a66c99?sa=X&ved=1t:2428&ictx=111&cshid=1755294483348711" target="_blank" class="active:border-none active:outline-none focus:outline:none focus:border-none px-2 py-1 text-brown-dp-1">Click here to open in Google Maps</a>`
     )
 
     new Marker({ color: '#ff5733' })
