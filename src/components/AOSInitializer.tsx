@@ -8,7 +8,7 @@ export default function AOSInitializer () {
     useEffect(() => {
         AOS.init({
             once: true,
-            easing: 'ease-in',
+            easing: 'ease-in-out',
             duration: 300,
             offset: 125,
             anchorPlacement: 'top-center'
