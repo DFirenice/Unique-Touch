@@ -11,7 +11,7 @@ const nameShape = Yup.string()
 
 const phoneShape = Yup.string()
     .matches(phoneRegExp, '* This number is not valid!')
-    .max(10)
+    .max(12)
     .required('* Phone is required!')
 
 // Booking Form Schema

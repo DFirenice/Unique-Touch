@@ -1,6 +1,6 @@
 "use client"
 
-import * as React from "react"
+import { useState, useEffect } from "react"
 import { ChevronDownIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -19,13 +19,19 @@ const DateAndTime = (
         { date: Date | undefined, setDate: (date: Date) => void, dateName: string, timeName: string }
 ) => {
     const { setFieldValue, setFieldError } = useFormikContext()
+    const initTime = "12:30"
 
-    const [open, setOpen] = React.useState(false)
-    const [time, setTime] = React.useState("12:00") // Changed to HH:mm
-    const [error] = React.useState<string | null>(null)
+    const [ open, setOpen ] = useState(false)
+    const [ time, setTime ] = useState(initTime) // Changed to HH:mm
+    const [ error ] = useState<string | null>(null)
 
     const currentDate = new Date()
     const maxDate = addDays(currentDate, 21)
+
+    // Initializing time to 12:00
+    useEffect(() => {
+        setFieldValue(timeName, initTime)
+    }, [])
 
     const validateTime = (timeStr: string) => {
         if (!date) return
@@ -108,7 +114,7 @@ const DateAndTime = (
                         max="21:30"
                         onChange={handleTimeChange}
                         className="placeholder:text-accent-foreground appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
-                        placeholder="Ex.g.: 17:30"
+                        placeholder="Ex.g.: 14:30"
                     />
                     {error && <p className="min-w-min w-full absolute top-full capitalize text-text-accent text-xs">{error}</p>}
                 </div>

@@ -1,6 +1,7 @@
 import { Heading } from "@app-ui/heading"
 import { Button } from "@app-ui/button"
 import BookNow from "@app-ui/book-now"
+import Link from "next/link"
 
 const Explore = () => {
     return (
@@ -20,7 +21,9 @@ const Explore = () => {
                     </div>
                     <div className="flex flex-row gap-4">
                         <BookNow variant="light" />
-                        <Button variant="outline">Explore Packages</Button>
+                        <Link href="/#packages">
+                            <Button size="lg" variant="outline" className="capitalize">Explore Packages</Button>
+                        </Link>
                     </div>
                 </div>
             </div>
